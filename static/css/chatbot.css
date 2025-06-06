@@ -1,0 +1,252 @@
+/* Chat Toggle Button */
+.chat-toggle-button {
+  position: fixed;
+  top: 90%;
+  right: 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.chat-toggle-button:hover {
+  transform: scale(1.1);
+  background-color: #0056b3;
+}
+
+/* Chat Widget */
+.chat-widget {
+  position: fixed;
+  top: 30%;
+  bottom: 90px;
+  right: 25px;
+  width: 350px;
+  max-height: 500px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 999;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.chat-widget.open {
+  display: flex;
+}
+
+/* Slide Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Chat Header */
+.chat-header {
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+  padding: 14px 16px;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Close Button */
+.chat-close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Messages Area */
+.chat-messages {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  scroll-behavior: smooth;
+}
+
+/* Input Area */
+.chat-input-area {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+  align-items: center;
+}
+
+.chat-input {
+  flex: 1;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  outline: none;
+}
+
+.chat-send-button {
+  margin-left: 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chat-send-button:hover {
+  background-color: #0056b3;
+}
+
+/* Mic Button */
+#mic-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #007bff;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+#mic-button:hover {
+  transform: scale(1.2);
+  color: #0056b3;
+}
+
+/* Messages */
+.message {
+  margin-bottom: 12px;
+  max-width: 80%;
+  line-height: 1.5;
+  border-radius: 16px;
+  padding: 10px 15px;
+  word-wrap: break-word;
+  font-size: 14px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-message {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.bot-message {
+  background-color: #f1f0f0;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+/* Typing Dots */
+.loading-indicator span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  background-color: #ccc;
+  border-radius: 50%;
+  animation: blink 1.4s infinite;
+}
+
+.loading-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0.2; }
+  40% { opacity: 1; }
+}
+
+/* Scrollbar Customization */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+/* Mic button text color */
+.btn-mic span {
+  color: black;
+}
+.btn-mic span:hover {
+  color: rgb(0, 136, 255);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .chat-widget {
+    top: 38%;
+    width: 300px;
+    left: 10px;
+    bottom: 60px;
+    height: 50%;
+  }
+
+  .chat-toggle-button {
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .chat-header {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .chat-send-button {
+    padding: 8px 12px;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .chat-input {
+    font-size: 14px;
+  }
+
+  #mic-button {
+    font-size: 18px;
+    margin: 0;
+  }
+}
