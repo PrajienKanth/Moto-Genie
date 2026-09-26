@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bike Specification | Moto Genie</title>
+
+    <link rel="icon"
+          type="image/x-icon"
+          href="{{ url_for('static', filename='images/logo.png') }}">
+
+    <!-- Main -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Bike Specification -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/bike_specification.css') }}">
+
+    <!-- Navbar -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/navbar.css') }}">
+
+    <!-- Preloader -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/preloader.css') }}">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+          rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+          rel="stylesheet">
+
+    <!-- AOS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- PRELOADER -->
+
+    <div id="preloader" class="moto-preloader">
+
+        <div class="preloader-bg"></div>
+        <div class="preloader-grid"></div>
+
+        <div class="preloader-particles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="preloader-content">
+
+            <div class="preloader-orbit">
+
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="orbit orbit-three"></div>
+
+                <div class="orbit-dot dot-one"></div>
+                <div class="orbit-dot dot-two"></div>
+
+                <div class="preloader-logo">
+
+                    <div class="logo-glow"></div>
+
+                    <img
+                        src="{{ url_for('static', filename='images/logo.png') }}"
+                        alt="Moto Genie">
+
+                </div>
+
+            </div>
+
+            <div class="preloader-brand">
+                <span class="brand-moto">MOTO</span>
+                <span class="brand-genie">GENIE</span>
+            </div>
+
+            <div class="preloader-tagline">
+                <span>AI</span>
+                <i></i>
+                <span>VEHICLE INTELLIGENCE</span>
+            </div>
+
+            <div class="preloader-status">
+
+                <span class="status-dot"></span>
+
+                <span id="preloader-status-text">
+                    Initializing intelligence
+                </span>
+
+            </div>
+
+            <div class="preloader-progress">
+
+                <div class="progress-track">
+                    <div id="preloader-progress-bar"></div>
+                </div>
+
+                <div class="progress-info">
+                    <span>LOADING SYSTEM</span>
+                    <span id="preloader-percent">0%</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="preloader-corner corner-top-left"></div>
+        <div class="preloader-corner corner-top-right"></div>
+        <div class="preloader-corner corner-bottom-left"></div>
+        <div class="preloader-corner corner-bottom-right"></div>
+
+    </div>
+
+
+    <!-- RESPONSE LOADER -->
+
+    <div
+        id="loader"
+        class="response-loader"
+        aria-label="Moto Genie is reading your request"
+        aria-live="polite">
+
+        <div class="response-loader-card">
+
+            <div class="response-loader-visual">
+
+                <span class="response-loader-ring response-loader-ring-one"></span>
+                <span class="response-loader-ring response-loader-ring-two"></span>
+
+                <span class="response-loader-glow"></span>
+
+                <img
+                    class="response-loader-genie"
+                    src="{{ url_for('static', filename='images/genie-read.png') }}"
+                    alt="Moto Genie reading">
+
+            </div>
+
+            <div class="response-loader-brand">
+                MOTO <span>GENIE</span>
+            </div>
+
+            <div class="response-loader-title">
+
+                Genie is reading
+
+                <span class="response-loader-dots">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+
+            </div>
+
+            <p class="response-loader-message">
+                Analyzing your bike and preparing a clear answer.
+            </p>
+
+            <div class="response-loader-track" aria-hidden="true">
+                <span></span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVBAR -->
+
+    <nav
+        class="navbar navbar-main"
+        id="navbar">
+
+        <div class="navbar-inner">
+
+            <a
+                class="brand"
+                href="/"
+                aria-label="Moto Genie Home">
+
+                <img
+                    class="brand-logo"
+                    src="{{ url_for('static', filename='images/logo.png') }}"
+                    alt="Moto Genie Logo">
+
+                <span class="brand-name">
+                    Moto <span>Genie</span>
+                </span>
+
+            </a>
+
+
+            <button
+                class="hamburger"
+                id="hamburger"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-controls="nav-links"
+                aria-expanded="false">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <div
+                class="nav"
+                id="nav-links">
+
+                <ul>
+
+                    <!-- HOME -->
+                    <li>
+
+                        <a
+                            class="nav-link"
+                            href="/">
+
+                            <i class="fas fa-house"></i>
+                            <span>Home</span>
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- ABOUT -->
+                    <li>
+
+                        <a
+                            class="nav-link"
+                            href="/#about">
+
+                            <i class="fas fa-circle-info"></i>
+                            <span>About</span>
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- CARS -->
+                    <li class="nav-dropdown">
+
+                        <button
+                            class="nav-link nav-dropdown-toggle"
+                            type="button"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+
+                            <i class="fas fa-car"></i>
+                            <span>Cars</span>
+
+                        </button>
+
+
+                        <div
+                            class="nav-dropdown-menu"
+                            role="menu">
+
+                            <a
+                                class="nav-dropdown-item"
+                                href="/car"
+                                role="menuitem">
+
+                                <span class="nav-dropdown-icon">
+                                    <i class="fas fa-car-side"></i>
+                                </span>
+
+                                <span>
+                                    <strong>Car Explorer</strong>
+                                    <small>Browse available cars</small>
+                                </span>
+
+                            </a>
+
+
+                            <a
+                                class="nav-dropdown-item"
+                                href="/car_specification"
+                                role="menuitem">
+
+                                <span class="nav-dropdown-icon">
+                                    <i class="fas fa-list-check"></i>
+                                </span>
+
+                                <span>
+                                    <strong>Car Specifications</strong>
+                                    <small>View detailed specifications</small>
+                                </span>
+
+                            </a>
+
+
+                            <a
+                                class="nav-dropdown-item"
+                                href="/car_comparison"
+                                role="menuitem">
+
+                                <span class="nav-dropdown-icon">
+                                    <i class="fas fa-scale-balanced"></i>
+                                </span>
+
+                                <span>
+                                    <strong>Car Comparison</strong>
+                                    <small>Compare car models</small>
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </li>
+
+
+                    <!-- BIKES -->
+                    <li class="nav-dropdown">
+
+                        <button
+                            class="nav-link nav-dropdown-toggle active"
+                            type="button"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+
+                            <i class="fas fa-motorcycle"></i>
+                            <span>Bikes</span>
+
+                        </button>
+
+
+                        <div
+                            class="nav-dropdown-menu"
+                            role="menu">
+
+                            <a
+                                class="nav-dropdown-item"
+                                href="/bike"
+                                role="menuitem">
+
+                                <span class="nav-dropdown-icon">
+                                    <i class="fas fa-motorcycle"></i>
+                                </span>
+
+                                <span>
+                                    <strong>Bike Explorer</strong>
+                                    <small>Browse available bikes</small>
+                                </span>
+
+                            </a>
+
+
+                            <a
+                                class="nav-dropdown-item"
+                                href="/bike_specification"
+                                role="menuitem">
+
+                                <span class="nav-dropdown-icon">
+                                    <i class="fas fa-list-check"></i>
+                                </span>
+
+                                <span>
+                                    <strong>Bike Specifications</strong>
+                                    <small>View detailed specifications</small>
+                                </span>
+
+                            </a>
+
+
+                            <a
+                                class="nav-dropdown-item"
+                                href="/bike_comparison"
+                                role="menuitem">
+
+                                <span class="nav-dropdown-icon">
+                                    <i class="fas fa-scale-balanced"></i>
+                                </span>
+
+                                <span>
+                                    <strong>Bike Comparison</strong>
+                                    <small>Compare bike models</small>
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </li>
+
+
+                    <!-- SERVICES -->
+                    <li>
+
+                        <a
+                            class="nav-link"
+                            href="/#services">
+
+                            <i class="fas fa-gears"></i>
+                            <span>Services</span>
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- FUEL COST -->
+                    <li>
+
+                        <a
+                            class="nav-link"
+                            href="/fuel_cost">
+
+                            <i class="fas fa-gas-pump"></i>
+                            <span>Fuel Cost</span>
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="spec-hero">
+
+        <div class="spec-hero-container">
+
+            <span class="spec-label">
+
+                <i class="fas fa-motorcycle"></i>
+
+                BIKE INTELLIGENCE
+
+            </span>
+
+
+            <h1>
+
+                Explore every
+                <span>bike detail.</span>
+
+            </h1>
+
+
+            <p>
+
+                Select a bike, ask your question, and let Moto Genie
+                turn motorcycle specifications into simple, useful answers.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- BIKE SPECIFICATION WORKFLOW -->
+
+    <section
+        class="workflow-section workflow-dark"
+        aria-labelledby="bike-spec-workflow-title">
+
+        <div class="workflow-container">
+
+            <div
+                class="workflow-heading"
+                data-aos="fade-up">
+
+                <div>
+
+                    <span class="workflow-kicker">
+
+                        <i class="fas fa-brain"></i>
+
+                        BIKE SPECIFICATION PROCESS
+
+                    </span>
+
+
+                    <h2 id="bike-spec-workflow-title">
+
+                        Ask about a bike.
+                        Get <span>focused answers.</span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Choose a bike model, describe what you want to know,
+                        and Moto Genie retrieves the most relevant bike
+                        records before generating an easy-to-read response.
+
+                    </p>
+
+                </div>
+
+
+                <div class="workflow-heading-badge">
+
+                    <i class="fas fa-database"></i>
+
+                    <span>RAG assisted</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="workflow-grid">
+
+                <!-- STEP 01 -->
+
+                <article
+                    class="workflow-card"
+                    data-aos="fade-up"
+                    data-aos-delay="50">
+
+                    <span class="workflow-number">
+                        01
+                    </span>
+
+                    <div class="workflow-icon">
+
+                        <i class="fas fa-motorcycle"></i>
+
+                    </div>
+
+                    <h3>
+                        Select the model
+                    </h3>
+
+                    <p>
+
+                        Enter the manufacturer and model so the assistant
+                        can focus the search on the bike you are actually
+                        asking about.
+
+                    </p>
+
+                    <span class="workflow-hint">
+                        Set vehicle context
+                    </span>
+
+                </article>
+
+
+                <!-- STEP 02 -->
+
+                <article
+                    class="workflow-card"
+                    data-aos="fade-up"
+                    data-aos-delay="120">
+
+                    <span class="workflow-number">
+                        02
+                    </span>
+
+                    <div class="workflow-icon">
+
+                        <i class="fas fa-filter-circle-dollar"></i>
+
+                    </div>
+
+                    <h3>
+                        Retrieve relevant data
+                    </h3>
+
+                    <p>
+
+                        The local retrieval layer searches the bike
+                        knowledge base and brings the most relevant
+                        records into the request context.
+
+                    </p>
+
+                    <span class="workflow-hint">
+                        Retrieve useful records
+                    </span>
+
+                </article>
+
+
+                <!-- STEP 03 -->
+
+                <article
+                    class="workflow-card"
+                    data-aos="fade-up"
+                    data-aos-delay="190">
+
+                    <span class="workflow-number">
+                        03
+                    </span>
+
+                    <div class="workflow-icon">
+
+                        <i class="fas fa-robot"></i>
+
+                    </div>
+
+                    <h3>
+                        Read the answer
+                    </h3>
+
+                    <p>
+
+                        Gemini uses the retrieved context to explain
+                        specifications, performance or other bike details
+                        in a conversational format.
+
+                    </p>
+
+                    <span class="workflow-hint">
+                        Understand the result
+                    </span>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BIKE SPECIFICATION -->
+
+    <section class="bike-spec-section">
+
+        <div class="bike-spec-container">
+
+
+            <!-- SECTION HEADING -->
+
+            <div
+                class="spec-section-heading"
+                data-aos="fade-up">
+
+                <div>
+
+                    <span class="section-label">
+                        VEHICLE ASSISTANT
+                    </span>
+
+                    <h2>
+
+                        Ask about your
+                        <span>bike.</span>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="spec-heading-icon">
+
+                    <i class="fas fa-motorcycle"></i>
+
+                </div>
+
+            </div>
+
+
+            <!-- MAIN GRID -->
+
+            <div class="spec-main-grid">
+
+
+                <!-- BIKE IMAGE -->
+
+                <div
+                    class="spec-image-card"
+                    data-aos="fade-right">
+
+                    <div class="spec-image-overlay"></div>
+
+
+                    <img
+                        src="{{ url_for('static', filename='images/bike_specification.jpeg') }}"
+                        alt="Bike specification">
+
+
+                    <div class="spec-image-content">
+
+                        <span>
+                            MOTO GENIE
+                        </span>
+
+                        <h3>
+                            Know your bike.
+                        </h3>
+
+                        <p>
+
+                            Specifications, performance and
+                            answers — all in one place.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FORM -->
+
+                <div
+                    class="spec-form-card"
+                    data-aos="fade-left">
+
+
+                    <div class="spec-form-header">
+
+                        <span class="spec-form-number">
+                            01
+                        </span>
+
+                        <div>
+
+                            <span class="spec-form-label">
+                                BIKE SPECIFICATION
+                            </span>
+
+                            <h3>
+                                Tell me about the bike
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ERROR -->
+
+                    {% if error %}
+
+                    <div class="spec-error">
+
+                        <i class="fas fa-circle-exclamation"></i>
+
+                        <span>
+                            {{ error }}
+                        </span>
+
+                    </div>
+
+                    {% endif %}
+
+
+                    <!-- FORM -->
+
+                    <form
+                        id="bikeSpecForm"
+                        method="POST"
+                        novalidate>
+
+
+                        <!-- COMPANY -->
+
+                        <div class="spec-field">
+
+                            <label for="company">
+
+                                <i class="fas fa-building"></i>
+
+                                Select Company
+
+                            </label>
+
+
+                            <div class="spec-input-wrapper">
+
+                                <input
+                                    id="company"
+                                    name="company"
+                                    type="text"
+                                    class="spec-input"
+                                    list="companies"
+                                    autocomplete="off"
+                                    placeholder="Type or select a company"
+                                    value="{{ request.form.get('company', '') }}"
+                                    required>
+
+                                <i class="fas fa-chevron-down spec-input-icon"></i>
+
+                            </div>
+
+
+                            <datalist id="companies">
+
+                                {% for company in companies %}
+
+                                <option value="{{ company }}"></option>
+
+                                {% endfor %}
+
+                            </datalist>
+
+                        </div>
+
+
+                        <!-- MODEL -->
+
+                        <div class="spec-field">
+
+                            <label for="model">
+
+                                <i class="fas fa-motorcycle"></i>
+
+                                Select Model
+
+                            </label>
+
+
+                            <div class="spec-input-wrapper">
+
+                                <input
+                                    id="model"
+                                    name="model"
+                                    type="text"
+                                    class="spec-input"
+                                    list="models"
+                                    autocomplete="off"
+                                    placeholder="Type or select a model"
+                                    value="{{ request.form.get('model', '') }}"
+                                    required>
+
+                                <i class="fas fa-chevron-down spec-input-icon"></i>
+
+                            </div>
+
+
+                            <datalist id="models">
+
+                                {% for model in company_models[request.form.get('company')]|default([]) %}
+
+                                <option value="{{ model }}"></option>
+
+                                {% endfor %}
+
+                            </datalist>
+
+                        </div>
+
+
+                        <!-- QUESTION -->
+
+                        <div class="spec-field">
+
+                            <label for="user_query">
+
+                                <i class="fas fa-comment-dots"></i>
+
+                                Ask about the bike
+
+                            </label>
+
+
+                            <div class="spec-query-wrapper">
+
+                                <textarea
+                                    id="user_query"
+                                    name="user_query"
+                                    class="spec-textarea"
+                                    rows="4"
+                                    placeholder="What would you like to know about this bike?"
+                                    required>{{ request.form.get('user_query', '') }}</textarea>
+
+
+                                <!-- Voice Input -->
+
+                                <button
+                                    id="voiceInputButton"
+                                    class="voice-input-button"
+                                    type="button"
+                                    aria-label="Use voice input"
+                                    title="Use voice input">
+
+                                    <i class="fas fa-microphone"></i>
+
+                                </button>
+
+
+                                <div
+                                    id="voiceStatus"
+                                    class="voice-input-status"
+                                    aria-live="polite">
+
+                                    <i class="fas fa-microphone"></i>
+
+                                    <span id="voiceStatusText">
+                                        Listening...
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            class="spec-submit-button"
+                            type="submit">
+
+                            <span>
+                                Ask Moto Genie
+                            </span>
+
+                            <i class="fas fa-arrow-right"></i>
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 BIKE DETAILS
+                 ================================================= -->
+
+            {% if bike_details %}
+
+            <div
+                class="bike-details-section"
+                data-aos="fade-up">
+
+
+                <!-- HEADING -->
+
+                <div class="response-section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            VEHICLE DATA
+                        </span>
+
+                        <h2>
+
+                            Bike
+                            <span>details.</span>
+
+                        </h2>
+
+                    </div>
+
+
+                    <div class="response-heading-line"></div>
+
+                </div>
+
+
+                <!-- DETAILS CARD -->
+
+                <div class="bike-details-card">
+
+
+                    <!-- HEADER -->
+
+                    <div class="bike-details-header">
+
+                        <div class="bike-details-icon">
+
+                            <i class="fas fa-motorcycle"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                SELECTED VEHICLE
+                            </span>
+
+                            <h3>
+
+                                {{ bike_details['company_name'] }}
+                                {{ bike_details['model'] }}
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DETAILS GRID -->
+
+                    <div class="bike-details-grid">
+
+
+                        <!-- COMPANY -->
+
+                        <div class="detail-item">
+
+                            <span>
+
+                                <i class="fas fa-building"></i>
+
+                                Company
+
+                            </span>
+
+                            <strong>
+                                {{ bike_details['company_name'] }}
+                            </strong>
+
+                        </div>
+
+
+                        <!-- MODEL -->
+
+                        <div class="detail-item">
+
+                            <span>
+
+                                <i class="fas fa-motorcycle"></i>
+
+                                Model
+
+                            </span>
+
+                            <strong>
+                                {{ bike_details['model'] }}
+                            </strong>
+
+                        </div>
+
+
+                        <!-- ENGINE -->
+
+                        <div class="detail-item">
+
+                            <span>
+
+                                <i class="fas fa-gears"></i>
+
+                                Engine
+
+                            </span>
+
+                            <strong>
+                                {{ bike_details['Engine Description'] }}
+                            </strong>
+
+                        </div>
+
+
+                        <!-- MAXIMUM POWER -->
+
+                        <div class="detail-item">
+
+                            <span>
+
+                                <i class="fas fa-bolt"></i>
+
+                                Maximum Power
+
+                            </span>
+
+                            <strong>
+                                {{ bike_details['Maximum Power'] }}
+                            </strong>
+
+                        </div>
+
+
+                        <!-- DISPLACEMENT -->
+
+                        <div class="detail-item">
+
+                            <span>
+
+                                <i class="fas fa-gauge-high"></i>
+
+                                Displacement
+
+                            </span>
+
+                            <strong>
+                                {{ bike_details['Displacement'] }}
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 AI RESPONSE
+                 ================================================= -->
+
+            <div
+                class="ai-response-section"
+                data-aos="fade-up">
+
+
+                <!-- HEADING -->
+
+                <div class="response-section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            MOTO GENIE AI
+                        </span>
+
+                        <h2>
+
+                            Your
+                            <span>answer.</span>
+
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESPONSE -->
+
+                <div class="response-container">
+
+
+                    <!-- HEADER -->
+
+                    <div class="response-header">
+
+                        <div class="response-title">
+
+                            <div class="response-ai-icon">
+
+                                <i class="fas fa-wand-magic-sparkles"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    AI GENERATED RESPONSE
+                                </span>
+
+                                <h3>
+                                    Moto Genie Assistant
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SPEECH CONTROLS -->
+
+                        <div class="speech-controls">
+
+                            <button
+                                id="speech-play"
+                                class="speech-button"
+                                type="button"
+                                title="Play response"
+                                aria-label="Play response">
+
+                                <i class="fas fa-play"></i>
+
+                            </button>
+
+
+                            <button
+                                id="speech-pause"
+                                class="speech-button"
+                                type="button"
+                                title="Pause speech"
+                                aria-label="Pause speech">
+
+                                <i class="fas fa-pause"></i>
+
+                            </button>
+
+
+                            <button
+                                id="speech-stop"
+                                class="speech-button speech-stop"
+                                type="button"
+                                title="Stop speech"
+                                aria-label="Stop speech">
+
+                                <i class="fas fa-stop"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SPEECH STATUS -->
+
+                    <div
+                        class="speech-status"
+                        id="speech-status">
+
+                        <i class="fas fa-volume-high"></i>
+
+                        <span>
+                            Listen to this response
+                        </span>
+
+                    </div>
+
+
+                    <!-- RESPONSE TEXT -->
+
+                    <div
+                        class="ai-response-text"
+                        id="ai-response-text"
+                        tabindex="0">
+
+                        {{ response }}
+
+                    </div>
+
+
+                    <!-- SPEECH PROGRESS -->
+
+                    <div
+                        class="speech-progress"
+                        id="speech-progress"
+                        aria-hidden="true">
+
+                        <div
+                            class="speech-progress-bar"
+                            id="speech-progress-bar">
+                        </div>
+
+                    </div>
+
+
+                    <!-- RESPONSE FOOTER -->
+
+                    <div class="response-footer">
+
+                        <div class="response-footer-info">
+
+                            <i class="fas fa-circle-check"></i>
+
+                            <span>
+                                Generated by Moto Genie AI
+                            </span>
+
+                        </div>
+
+
+                        <div class="response-actions">
+
+                            <button
+                                class="response-action-button"
+                                id="printPdfButton"
+                                type="button"
+                                onclick="printResponse()">
+
+                                <i class="fas fa-file-pdf"></i>
+
+                                PDF
+
+                            </button>
+
+
+                            <button
+                                class="response-action-button"
+                                id="printDocButton"
+                                type="button"
+                                onclick="printDoc()">
+
+                                <i class="fas fa-file-word"></i>
+
+                                DOC
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer
+        class="moto-footer"
+        data-aos="fade-up">
+
+        <div class="footer-container">
+
+            <div class="footer-main">
+
+
+                <!-- BRAND -->
+
+                <div class="footer-brand">
+
+                    <a
+                        class="footer-logo"
+                        href="/">
+
+                        <img
+                            src="{{ url_for('static', filename='images/logo.png') }}"
+                            alt="Moto Genie Logo">
+
+                        <span>
+                            Moto <strong>Genie</strong>
+                        </span>
+
+                    </a>
+
+
+                    <p>
+
+                        An AI-powered vehicle assistant that makes it
+                        easier to explore cars and bikes, understand
+                        specifications, compare models, and get useful
+                        vehicle information.
+
+                    </p>
+
+                </div>
+
+
+                <!-- SERVICES -->
+
+                <div class="footer-column">
+
+                    <span class="footer-label">
+                        EXPLORE
+                    </span>
+
+                    <h4>
+                        Services
+                    </h4>
+
+
+                    <ul>
+
+                        <li>
+
+                            <a href="/car_specification">
+
+                                <i class="fas fa-car"></i>
+
+                                Car Specifications
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="/car_comparison">
+
+                                <i class="fas fa-scale-balanced"></i>
+
+                                Car Comparison
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="/bike_specification">
+
+                                <i class="fas fa-motorcycle"></i>
+
+                                Bike Specifications
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="/bike_comparison">
+
+                                <i class="fas fa-scale-balanced"></i>
+
+                                Bike Comparison
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="/fuel_cost">
+
+                                <i class="fas fa-gas-pump"></i>
+
+                                Fuel Cost Calculator
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- QUICK LINKS -->
+
+                <div class="footer-column">
+
+                    <span class="footer-label">
+                        MOTO GENIE
+                    </span>
+
+                    <h4>
+                        Quick Links
+                    </h4>
+
+
+                    <ul>
+
+                        <li>
+
+                            <a href="/">
+
+                                <i class="fas fa-house"></i>
+
+                                Home
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="/#about">
+
+                                <i class="fas fa-circle-info"></i>
+
+                                About
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="/#services">
+
+                                <i class="fas fa-gears"></i>
+
+                                Services
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- CONTACT -->
+
+                <div class="footer-column footer-contact">
+
+                    <span class="footer-label">
+                        GET IN TOUCH
+                    </span>
+
+                    <h4>
+                        Contact
+                    </h4>
+
+
+                    <a
+                        class="footer-contact-item"
+                        href="mailto:motogenie@gmail.com">
+
+                        <span class="footer-contact-icon">
+
+                            <i class="fas fa-envelope"></i>
+
+                        </span>
+
+                        <span>
+                            motogenie@gmail.com
+                        </span>
+
+                    </a>
+
+
+                    <div class="footer-contact-item">
+
+                        <span class="footer-contact-icon">
+
+                            <i class="fas fa-phone"></i>
+
+                        </span>
+
+                        <span>
+                            +91 - XXXXXXXXXX
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER BOTTOM -->
+
+            <div class="footer-bottom">
+
+                <p>
+
+                    © 2026 Moto Genie.
+                    <span>All Rights Reserved.</span>
+
+                </p>
+
+
+                <p class="footer-built">
+
+                    Built with
+                    <i class="fas fa-heart"></i>
+                    &amp; AI
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- LIBRARIES -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+    <!-- JINJA DATA -->
+
+    <script>
+        window.bikeCompanyModels = {{ company_models | tojson }};
+    </script>
+
+
+    <!-- MOTO GENIE JAVASCRIPT -->
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/preloader.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/bike_specification.js') }}"></script>
+
+</body>
+
+</html>

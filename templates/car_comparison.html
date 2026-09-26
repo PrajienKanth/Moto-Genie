@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Moto Genie | Car Comparison</title>
+    <!-- Main CSS -->
+    <link href="/static/css/style.css" rel="stylesheet" />
+
+    <!-- Car Specification -->
+    <link href="/static/css/car_comparison.css" rel="stylesheet" />
+
+    <!-- Navbar -->
+    <link rel="stylesheet" href="/static/css/navbar.css">
+
+    <!-- Preloader -->
+    <link rel="stylesheet" href="/static/css/preloader.css">
+    
+    <!-- Favicon -->
+    <link href="/static/images/logo.png" rel="icon" type="image/x-icon" />
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Raleway:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    
+        <!-- AOS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    
+    <!-- Font Awesome -->
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader" class="moto-preloader">
+
+        <div class="preloader-bg"></div>
+        <div class="preloader-grid"></div>
+
+        <div class="preloader-particles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="preloader-content">
+
+            <div class="preloader-orbit">
+
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="orbit orbit-three"></div>
+
+                <div class="orbit-dot dot-one"></div>
+                <div class="orbit-dot dot-two"></div>
+
+                <div class="preloader-logo">
+                    <div class="logo-glow"></div>
+
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Moto Genie">
+                </div>
+
+            </div>
+
+            <div class="preloader-brand">
+                <span class="brand-moto">MOTO</span>
+                <span class="brand-genie">GENIE</span>
+            </div>
+
+            <div class="preloader-tagline">
+                <span>AI</span>
+                <i></i>
+                <span>VEHICLE INTELLIGENCE</span>
+            </div>
+
+            <div class="preloader-status">
+                <span class="status-dot"></span>
+
+                <span id="preloader-status-text">
+                    Initializing intelligence
+                </span>
+            </div>
+
+            <div class="preloader-progress">
+
+                <div class="progress-track">
+                    <div id="preloader-progress-bar"></div>
+                </div>
+
+                <div class="progress-info">
+                    <span>LOADING SYSTEM</span>
+                    <span id="preloader-percent">0%</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="preloader-corner corner-top-left"></div>
+        <div class="preloader-corner corner-top-right"></div>
+        <div class="preloader-corner corner-bottom-left"></div>
+        <div class="preloader-corner corner-bottom-right"></div>
+
+    </div>
+
+    <!-- =========================================
+         LOADER
+    ========================================== -->
+    <div aria-label="Moto Genie is reading your comparison request" aria-live="polite" class="response-loader"
+        id="loader">
+        <div class="response-loader-card">
+            <div class="response-loader-visual">
+                <span class="response-loader-ring response-loader-ring-one"></span>
+                <span class="response-loader-ring response-loader-ring-two"></span>
+                <span class="response-loader-glow"></span>
+                <img alt="Moto Genie reading" class="response-loader-genie" src="/static/images/genie-read.png" />
+            </div>
+            <div class="response-loader-brand">MOTO <span>GENIE</span></div>
+            <div class="response-loader-title">
+                Genie is reading<span class="response-loader-dots"><i></i><i></i><i></i></span>
+            </div>
+            <p class="response-loader-message">Comparing your selected vehicles and preparing a clear answer.</p>
+            <div aria-hidden="true" class="response-loader-track">
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+    <nav class="navbar navbar-main" id="navbar">
+        <div class="navbar-inner">
+            <a aria-label="Moto Genie Home" class="brand" href="/">
+                <img alt="Moto Genie Logo" class="brand-logo" src="/static/images/logo.png" />
+                <span class="brand-name">Moto <span>Genie</span></span>
+            </a>
+            <button aria-controls="nav-links" aria-expanded="false" aria-label="Open navigation menu" class="hamburger"
+                id="hamburger" type="button">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav" id="nav-links">
+                <ul>
+                    <li><a class="nav-link" href="/"><i class="fas fa-house"></i><span>Home</span></a></li>
+                    <li><a class="nav-link" href="/#about"><i class="fas fa-circle-info"></i><span>About</span></a></li>
+                    <li class="nav-dropdown">
+                        <button aria-expanded="false" aria-haspopup="true" class="nav-link nav-dropdown-toggle active"
+                            type="button">
+                            <i class="fas fa-car"></i><span>Cars</span>
+                        </button>
+                        <div class="nav-dropdown-menu" role="menu">
+                            <a class="nav-dropdown-item" href="/car" role="menuitem"><span class="nav-dropdown-icon"><i
+                                        class="fas fa-car-side"></i></span><span><strong>Car
+                                        Explorer</strong><small>Browse available cars</small></span></a>
+                            <a class="nav-dropdown-item" href="/car_specification" role="menuitem"><span
+                                    class="nav-dropdown-icon"><i class="fas fa-list-check"></i></span><span><strong>Car
+                                        Specifications</strong><small>View detailed specifications</small></span></a>
+                            <a class="nav-dropdown-item" href="/car_comparison" role="menuitem"><span
+                                    class="nav-dropdown-icon"><i
+                                        class="fas fa-scale-balanced"></i></span><span><strong>Car
+                                        Comparison</strong><small>Compare car models</small></span></a>
+                        </div>
+                    </li>
+                    <li class="nav-dropdown">
+                        <button aria-expanded="false" aria-haspopup="true" class="nav-link nav-dropdown-toggle"
+                            type="button">
+                            <i class="fas fa-motorcycle"></i><span>Bikes</span>
+                        </button>
+                        <div class="nav-dropdown-menu" role="menu">
+                            <a class="nav-dropdown-item" href="/bike" role="menuitem"><span class="nav-dropdown-icon"><i
+                                        class="fas fa-motorcycle"></i></span><span><strong>Bike
+                                        Explorer</strong><small>Browse available bikes</small></span></a>
+                            <a class="nav-dropdown-item" href="/bike_specification" role="menuitem"><span
+                                    class="nav-dropdown-icon"><i class="fas fa-list-check"></i></span><span><strong>Bike
+                                        Specifications</strong><small>View detailed specifications</small></span></a>
+                            <a class="nav-dropdown-item" href="/bike_comparison" role="menuitem"><span
+                                    class="nav-dropdown-icon"><i
+                                        class="fas fa-scale-balanced"></i></span><span><strong>Bike
+                                        Comparison</strong><small>Compare bike models</small></span></a>
+                        </div>
+                    </li>
+                    <li><a class="nav-link" href="/#services"><i class="fas fa-gears"></i><span>Services</span></a></li>
+                    <li><a class="nav-link" href="/fuel_cost"><i class="fas fa-gas-pump"></i><span>Fuel Cost</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- =========================================
+         HERO
+    ========================================== -->
+    <main>
+        <section class="comparison-hero">
+            <div class="comparison-hero-glow glow-one"></div>
+            <div class="comparison-hero-glow glow-two"></div>
+            <div class="comparison-container">
+                <div class="comparison-hero-content" data-aos="fade-up">
+                    <span class="section-label">
+                        03 — CAR COMPARISON
+                    </span>
+                    <h1>
+                        Compare cars.
+                        <span>Choose smarter.</span>
+                    </h1>
+                    <p>
+                        Compare two cars side by side and let Moto Genie
+                        identify the differences that matter to you.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- =========================================
+             COMPARISON FORM
+        ========================================== -->
+        <!-- =========================================
+             COMPARISON FORM
+        ========================================== -->
+        <!-- =========================================
+             CAR COMPARISON — HOW IT WORKS
+        ========================================== -->
+        <section aria-labelledby="car-comparison-workflow-title" class="workflow-section workflow-comparison">
+            <div class="workflow-container">
+                <div class="workflow-heading" data-aos="fade-up">
+                    <div>
+                        <span class="workflow-kicker"><i class="fas fa-code-compare"></i> CAR COMPARISON PROCESS</span>
+                        <h2 id="car-comparison-workflow-title">A clear path from two cars to <span>one informed
+                                view.</span></h2>
+                        <p>Select two models, let Moto Genie retrieve their relevant records, then explore the
+                            comparison across the areas that matter to you.</p>
+                    </div>
+                    <div class="workflow-heading-badge"><i class="fas fa-scale-balanced"></i><span>Side-by-side</span>
+                    </div>
+                </div>
+                <div class="workflow-grid">
+                    <article class="workflow-card" data-aos="fade-up" data-aos-delay="50"><span
+                            class="workflow-number">01</span>
+                        <div class="workflow-icon"><i class="fas fa-car-side"></i></div>
+                        <h3>Choose two cars</h3>
+                        <p>Enter the company and model for each side of the comparison so both vehicles have a clear
+                            identity.</p><span class="workflow-hint">Vehicle A + Vehicle B</span>
+                    </article>
+                    <article class="workflow-card" data-aos="fade-up" data-aos-delay="120"><span
+                            class="workflow-number">02</span>
+                        <div class="workflow-icon"><i class="fas fa-database"></i></div>
+                        <h3>Build the context</h3>
+                        <p>Moto Genie retrieves the relevant records for the selected cars and prepares the information
+                            used for the comparison.</p><span class="workflow-hint">Relevant data first</span>
+                    </article>
+                    <article class="workflow-card" data-aos="fade-up" data-aos-delay="190"><span
+                            class="workflow-number">03</span>
+                        <div class="workflow-icon"><i class="fas fa-chart-column"></i></div>
+                        <h3>Explore the differences</h3>
+                        <p>Review the resulting comparison by overview, performance and other available categories
+                            instead of reading two separate pages.</p><span class="workflow-hint">Compare with
+                            context</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="comparison-section">
+            <div class="comparison-container">
+
+                {% if error %}
+
+                <div class="comparison-error" data-aos="fade-down">
+                    <i class="fas fa-circle-exclamation"></i>
+                    <span>{{ error }}</span>
+                </div>
+
+                {% endif %}
+
+
+                <!-- =========================================
+                     IMAGE + FORM
+                ========================================== -->
+                <div class="comparison-form-layout">
+                    <!-- LEFT: IMAGE -->
+                    <div class="comparison-image-card" data-aos="fade-right">
+                        <div class="comparison-image-wrapper">
+                            <img alt="Car comparison" class="comparison-main-image" src="/static/images/about.jpeg" />
+                            <div class="comparison-image-overlay"></div>
+                            <div class="comparison-image-content">
+                                <span class="image-label">
+                                    SMARTER VEHICLE DECISIONS
+                                </span>
+                                <h2>
+                                    Compare before you decide.
+                                </h2>
+                                <p>
+                                    Explore the important differences between two vehicles
+                                    and find the one that fits your needs.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- BELOW IMAGE -->
+                        <div class="comparison-image-stats">
+                            <div class="image-stat">
+                                <i class="fas fa-car"></i>
+                                <div>
+                                    <strong>2 Vehicles</strong>
+                                    <span>COMPARE</span>
+                                </div>
+                            </div>
+                            <div class="image-stat">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <strong>Smart Analysis</strong>
+                                    <span>INSIGHTS</span>
+                                </div>
+                            </div>
+                            <div class="image-stat">
+                                <i class="fas fa-robot"></i>
+                                <div>
+                                    <strong>AI Powered</strong>
+                                    <span>RECOMMENDATION</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- =====================================
+                         RIGHT FORM
+                    ====================================== -->
+                    <div class="comparison-form-card" data-aos="fade-left">
+                        <div class="form-card-header">
+                            <div>
+                                <span class="card-label">
+                                    SELECT VEHICLES
+                                </span>
+                                <h2>
+                                    Choose your two cars
+                                </h2>
+                                <p>
+                                    Select the vehicles you want Moto Genie
+                                    to compare.
+                                </p>
+                            </div>
+                            <div class="compare-icon">
+                                <i class="fas fa-scale-balanced"></i>
+                            </div>
+                        </div>
+                        <form class="comparison-form" id="carComparisonForm" method="POST">
+                            <!-- =================================
+                                 VEHICLE SELECTION
+                            ================================== -->
+                            <div class="vehicle-selection-grid">
+                                <!-- CAR ONE -->
+                                <div class="vehicle-selector vehicle-one">
+                                    <div class="vehicle-selector-header">
+                                        <div class="vehicle-number">
+                                            01
+                                        </div>
+                                        <div>
+                                            <span>
+                                                FIRST CAR
+                                            </span>
+                                            <h3>
+                                                Compare vehicle
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <!-- Company -->
+                                    <div class="comparison-field">
+                                        <label for="company1">
+                                            <i class="fas fa-building"></i>
+
+                                            Company
+
+                                        </label>
+                                        <div class="comparison-input-wrapper">
+                                            <input autocomplete="off" class="comparison-input" id="company1"
+                                                list="companies1" name="company1" placeholder="Select company"
+                                                required="" type="text"
+                                                value="{{ request.form.get('company1', '') }}" />
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                        <datalist id="companies1">
+
+                                            {% for company in companies %}
+
+                                            <option value="{{ company }}"></option>
+
+                                            {% endfor %}
+
+                                        </datalist>
+                                    </div>
+                                    <!-- Model -->
+                                    <div class="comparison-field">
+                                        <label for="model1">
+                                            <i class="fas fa-car-side"></i>
+
+                                            Model
+
+                                        </label>
+                                        <div class="comparison-input-wrapper">
+                                            <input autocomplete="off" class="comparison-input" id="model1"
+                                                list="models1" name="model1" placeholder="Select model" required=""
+                                                type="text" value="{{ request.form.get('model1', '') }}" />
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                        <datalist id="models1">
+
+                                            {% for model in company_models[request.form.get('company1')]|default([]) %}
+
+                                            <option value="{{ model }}"></option>
+
+                                            {% endfor %}
+
+                                        </datalist>
+                                    </div>
+                                    <!-- Dynamic Preview -->
+                                    <div class="vehicle-preview" id="vehiclePreview1">
+                                        <i class="fas fa-car-side"></i>
+                                        <div>
+                                            <span>
+                                                YOUR FIRST CHOICE
+                                            </span>
+                                            <strong>
+                                                Select a vehicle
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- VS -->
+                                <div class="comparison-vs">
+                                    <span>VS</span>
+                                </div>
+                                <!-- CAR TWO -->
+                                <div class="vehicle-selector vehicle-two">
+                                    <div class="vehicle-selector-header">
+                                        <div class="vehicle-number">
+                                            02
+                                        </div>
+                                        <div>
+                                            <span>
+                                                SECOND CAR
+                                            </span>
+                                            <h3>
+                                                Compare vehicle
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <!-- Company -->
+                                    <div class="comparison-field">
+                                        <label for="company2">
+                                            <i class="fas fa-building"></i>
+
+                                            Company
+
+                                        </label>
+                                        <div class="comparison-input-wrapper">
+                                            <input autocomplete="off" class="comparison-input" id="company2"
+                                                list="companies2" name="company2" placeholder="Select company"
+                                                required="" type="text"
+                                                value="{{ request.form.get('company2', '') }}" />
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                        <datalist id="companies2">
+
+                                            {% for company in companies %}
+
+                                            <option value="{{ company }}"></option>
+
+                                            {% endfor %}
+
+                                        </datalist>
+                                    </div>
+                                    <!-- Model -->
+                                    <div class="comparison-field">
+                                        <label for="model2">
+                                            <i class="fas fa-car-side"></i>
+
+                                            Model
+
+                                        </label>
+                                        <div class="comparison-input-wrapper">
+                                            <input autocomplete="off" class="comparison-input" id="model2"
+                                                list="models2" name="model2" placeholder="Select model" required=""
+                                                type="text" value="{{ request.form.get('model2', '') }}" />
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                        <datalist id="models2">
+
+                                            {% for model in company_models[request.form.get('company2')]|default([]) %}
+
+                                            <option value="{{ model }}"></option>
+
+                                            {% endfor %}
+
+                                        </datalist>
+                                    </div>
+                                    <!-- Dynamic Preview -->
+                                    <div class="vehicle-preview" id="vehiclePreview2">
+                                        <i class="fas fa-car-side"></i>
+                                        <div>
+                                            <span>
+                                                YOUR SECOND CHOICE
+                                            </span>
+                                            <strong>
+                                                Select a vehicle
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- =================================
+                                 REQUIREMENTS
+                            ================================== -->
+                            <div class="requirements-field">
+                                <div class="requirements-header">
+                                    <label for="user_requirements">
+                                        <i class="fas fa-bullseye"></i>
+
+                                        What matters to you?
+
+                                    </label>
+                                    <span>
+                                        PERSONALIZE
+                                    </span>
+                                </div>
+                                <textarea class="requirements-input" id="user_requirements" name="user_requirements"
+                                    placeholder="Example: I want better performance, fuel efficiency and a car suitable for daily city driving."
+                                    required="" rows="3">{{ request.form.get('user_requirements', '') }}</textarea>
+                                <!-- Quick requirement buttons -->
+                                <div class="requirement-chips">
+                                    <button class="requirement-chip" data-requirement="Performance" type="button">
+                                        <i class="fas fa-gauge-high"></i>
+                                        Performance
+                                    </button>
+                                    <button class="requirement-chip" data-requirement="Fuel efficiency" type="button">
+                                        <i class="fas fa-gas-pump"></i>
+                                        Fuel efficiency
+                                    </button>
+                                    <button class="requirement-chip" data-requirement="Daily city driving"
+                                        type="button">
+                                        <i class="fas fa-city"></i>
+                                        Daily use
+                                    </button>
+                                    <button class="requirement-chip" data-requirement="Family comfort" type="button">
+                                        <i class="fas fa-users"></i>
+                                        Family
+                                    </button>
+                                    <button class="requirement-chip" data-requirement="Value for money" type="button">
+                                        <i class="fas fa-indian-rupee-sign"></i>
+                                        Value
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- =================================
+                                 SUBMIT
+                            ================================== -->
+                            <button class="compare-submit" id="compareSubmit" type="submit">
+                                <span class="compare-submit-icon">
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                </span>
+                                <span class="compare-submit-text">
+                                    <small>RUN ANALYSIS</small>
+                                    <strong>Compare Cars</strong>
+                                </span>
+                                <i class="fa-solid fa-arrow-right compare-arrow"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <!-- =========================================
+                     YOUR EXISTING RESULTS SECTION
+                     
+                     KEEP EVERYTHING FROM:
+                     {% if car1_details and car2_details %}
+                     
+                     THROUGH:
+                     {% endif %}
+                ========================================== -->
+
+                {% if car1_details and car2_details %}
+
+                <!-- YOUR EXISTING RESULTS SECTION START -->
+                <section class="comparison-results" id="comparisonResults">
+                    <!-- Keep your existing results code here -->
+                    <!-- CAR HEADER CARDS -->
+                    <div class="car-header-grid" data-aos="fade-up">
+                        <div class="car-result-card car-result-one">
+                            <span class="result-number">
+                                CAR 01
+                            </span>
+                            <div class="car-result-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <span class="result-company">
+                                {{ car1_details['Company'] }}
+                            </span>
+                            <h2>
+                                {{ car1_details['Model'] }}
+                            </h2>
+                        </div>
+                        <div class="result-vs">
+                            <span>VS</span>
+                        </div>
+                        <div class="car-result-card car-result-two">
+                            <span class="result-number">
+                                CAR 02
+                            </span>
+                            <div class="car-result-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <span class="result-company">
+                                {{ car2_details['Company'] }}
+                            </span>
+                            <h2>
+                                {{ car2_details['Model'] }}
+                            </h2>
+                        </div>
+                    </div>
+                    <!-- INTERACTIVE COMPARISON -->
+                    <div class="comparison-panel" data-aos="fade-up">
+                        <div class="comparison-panel-header">
+                            <div>
+                                <span class="card-label">
+                                    INTERACTIVE COMPARISON
+                                </span>
+                                <h2>
+                                    See the difference
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="comparison-tabs" role="tablist">
+                            <button class="comparison-tab active" data-tab="overview" type="button">
+                                <i class="fas fa-chart-simple"></i>
+                                Overview
+                            </button>
+                            <button class="comparison-tab" data-tab="performance" type="button">
+                                <i class="fas fa-gauge-high"></i>
+                                Performance
+                            </button>
+                            <button class="comparison-tab" data-tab="fuel" type="button">
+                                <i class="fas fa-gas-pump"></i>
+                                Fuel
+                            </button>
+                            <button class="comparison-tab" data-tab="specifications" type="button">
+                                <i class="fas fa-list-check"></i>
+                                Specifications
+                            </button>
+                        </div>
+                        <!-- OVERVIEW -->
+                        <div class="comparison-tab-content active" id="overview">
+                            <div class="metric-grid">
+                                <div class="metric-card" data-type="higher"
+                                    data-value1="{{ car1_details['Power(HP)'] }}"
+                                    data-value2="{{ car2_details['Power(HP)'] }}">
+                                    <div class="metric-header">
+                                        <span>
+                                            Horsepower
+                                        </span>
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <div class="metric-values">
+                                        <div class="metric-car">
+                                            <strong>
+                                                {{ car1_details['Power(HP)'] }}
+                                            </strong>
+                                            <span>
+                                                {{ car1_details['Model'] }}
+                                            </span>
+                                        </div>
+                                        <div class="metric-car">
+                                            <strong>
+                                                {{ car2_details['Power(HP)'] }}
+                                            </strong>
+                                            <span>
+                                                {{ car2_details['Model'] }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-bars">
+                                        <div class="comparison-bar">
+                                            <span></span>
+                                        </div>
+                                        <div class="comparison-bar second">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="metric-card" data-type="higher"
+                                    data-value1="{{ car1_details['Cylinders'] }}"
+                                    data-value2="{{ car2_details['Cylinders'] }}">
+                                    <div class="metric-header">
+                                        <span>
+                                            Cylinders
+                                        </span>
+                                        <i class="fas fa-gears"></i>
+                                    </div>
+                                    <div class="metric-values">
+                                        <div class="metric-car">
+                                            <strong>
+                                                {{ car1_details['Cylinders'] }}
+                                            </strong>
+                                            <span>
+                                                {{ car1_details['Model'] }}
+                                            </span>
+                                        </div>
+                                        <div class="metric-car">
+                                            <strong>
+                                                {{ car2_details['Cylinders'] }}
+                                            </strong>
+                                            <span>
+                                                {{ car2_details['Model'] }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="comparison-bars">
+                                        <div class="comparison-bar">
+                                            <span></span>
+                                        </div>
+                                        <div class="comparison-bar second">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="metric-card text-metric">
+                                    <div class="metric-header">
+                                        <span>
+                                            Fuel Type
+                                        </span>
+                                        <i class="fas fa-gas-pump"></i>
+                                    </div>
+                                    <div class="text-comparison">
+                                        <div>
+                                            <strong>
+                                                {{ car1_details['Fuel'] }}
+                                            </strong>
+                                            <span>
+                                                {{ car1_details['Model'] }}
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <strong>
+                                                {{ car2_details['Fuel'] }}
+                                            </strong>
+                                            <span>
+                                                {{ car2_details['Model'] }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PERFORMANCE -->
+                        <div class="comparison-tab-content" id="performance">
+                            <div class="performance-grid">
+                                <div class="performance-card">
+                                    <div class="performance-icon">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <span>
+                                        HORSEPOWER
+                                    </span>
+                                    <div class="performance-values">
+                                        <strong>
+                                            {{ car1_details['Power(HP)'] }} HP
+                                            vs
+                                            {{ car2_details['Power(HP)'] }} HP
+                                        </strong>
+                                        <span>
+                                            {{ car1_details['Model'] }}
+                                            vs
+                                            {{ car2_details['Model'] }}
+                                        </span>
+                                    </div>
+                                    <div class="performance-track">
+                                        <span class="performance-fill"></span>
+                                    </div>
+                                </div>
+                                <div class="performance-card">
+                                    <div class="performance-icon">
+                                        <i class="fas fa-gears"></i>
+                                    </div>
+                                    <span>
+                                        CYLINDERS
+                                    </span>
+                                    <div class="performance-values">
+                                        <strong>
+                                            {{ car1_details['Cylinders'] }}
+                                            vs
+                                            {{ car2_details['Cylinders'] }}
+                                        </strong>
+                                        <span>
+                                            {{ car1_details['Model'] }}
+                                            vs
+                                            {{ car2_details['Model'] }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FUEL -->
+                        <div class="comparison-tab-content" id="fuel">
+                            <div class="fuel-comparison-grid">
+                                <div class="fuel-card">
+                                    <div class="fuel-icon">
+                                        <i class="fas fa-gas-pump"></i>
+                                    </div>
+                                    <span>
+                                        {{ car1_details['Model'] }}
+                                    </span>
+                                    <strong>
+                                        {{ car1_details['Fuel'] }}
+                                    </strong>
+                                    <small>
+                                        Fuel type
+                                    </small>
+                                </div>
+                                <div class="fuel-vs">
+                                    VS
+                                </div>
+                                <div class="fuel-card">
+                                    <div class="fuel-icon">
+                                        <i class="fas fa-gas-pump"></i>
+                                    </div>
+                                    <span>
+                                        {{ car2_details['Model'] }}
+                                    </span>
+                                    <strong>
+                                        {{ car2_details['Fuel'] }}
+                                    </strong>
+                                    <small>
+                                        Fuel type
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SPECIFICATIONS -->
+                        <div class="comparison-tab-content" id="specifications">
+                            <div class="spec-comparison-table">
+                                <div class="spec-row spec-heading">
+                                    <div>Feature</div>
+                                    <div>
+                                        {{ car1_details['Model'] }}
+                                    </div>
+                                    <div>
+                                        {{ car2_details['Model'] }}
+                                    </div>
+                                </div>
+                                <div class="spec-row">
+                                    <div>
+                                        <i class="fas fa-building"></i>
+                                        Company
+                                    </div>
+                                    <div>
+                                        {{ car1_details['Company'] }}
+                                    </div>
+                                    <div>
+                                        {{ car2_details['Company'] }}
+                                    </div>
+                                </div>
+                                <div class="spec-row">
+                                    <div>
+                                        <i class="fas fa-car-side"></i>
+                                        Model
+                                    </div>
+                                    <div>
+                                        {{ car1_details['Model'] }}
+                                    </div>
+                                    <div>
+                                        {{ car2_details['Model'] }}
+                                    </div>
+                                </div>
+                                <div class="spec-row">
+                                    <div>
+                                        <i class="fas fa-gears"></i>
+                                        Cylinders
+                                    </div>
+                                    <div>
+                                        {{ car1_details['Cylinders'] }}
+                                    </div>
+                                    <div>
+                                        {{ car2_details['Cylinders'] }}
+                                    </div>
+                                </div>
+                                <div class="spec-row">
+                                    <div>
+                                        <i class="fas fa-bolt"></i>
+                                        Horsepower
+                                    </div>
+                                    <div>
+                                        {{ car1_details['Power(HP)'] }} HP
+                                    </div>
+                                    <div>
+                                        {{ car2_details['Power(HP)'] }} HP
+                                    </div>
+                                </div>
+                                <div class="spec-row">
+                                    <div>
+                                        <i class="fas fa-gas-pump"></i>
+                                        Fuel
+                                    </div>
+                                    <div>
+                                        {{ car1_details['Fuel'] }}
+                                    </div>
+                                    <div>
+                                        {{ car2_details['Fuel'] }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- REQUIREMENT RESULT -->
+                    <div class="requirement-result" data-aos="fade-up">
+                        <div class="requirement-result-header">
+                            <div>
+                                <span class="card-label">
+                                    MOTO GENIE VERDICT
+                                </span>
+                                <h2>
+                                    Based on what matters to you
+                                </h2>
+                            </div>
+                            <div class="verdict-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                        </div>
+                        <div class="requirement-text">
+                            <i class="fas fa-quote-left"></i>
+                            <span>
+                                {{ request.form.get(
+                                'user_requirements',
+                                'Your selected requirements'
+                                ) }}
+                            </span>
+                        </div>
+                        <div class="match-grid">
+                            <div class="match-card">
+                                <span>CAR 01</span>
+                                <strong>
+                                    {{ car1_details['Model'] }}
+                                </strong>
+                                <div class="match-bar">
+                                    <span id="matchBarOne"></span>
+                                </div>
+                            </div>
+                            <div class="match-card">
+                                <span>CAR 02</span>
+                                <strong>
+                                    {{ car2_details['Model'] }}
+                                </strong>
+                                <div class="match-bar">
+                                    <span id="matchBarTwo"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="match-note">
+
+                            Moto Genie uses your requirements together with
+                            the available vehicle specifications to explain
+                            which car better fits your needs.
+
+                        </p>
+                    </div>
+                    <!-- AI RESPONSE -->
+                    <div class="ai-comparison-card" data-aos="fade-up">
+                        <div class="ai-response-header">
+                            <div class="ai-response-title">
+                                <div class="ai-icon">
+                                    <i class="fas fa-sparkles"></i>
+                                </div>
+                                <div>
+                                    <span>
+                                        MOTO GENIE AI
+                                    </span>
+                                    <h2>
+                                        AI Comparison
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="speech-controls">
+                                <button aria-label="Play AI comparison" id="comparisonSpeechPlay" title="Play"
+                                    type="button">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button aria-label="Pause AI comparison" id="comparisonSpeechPause" title="Pause"
+                                    type="button">
+                                    <i class="fas fa-pause"></i>
+                                </button>
+                                <button aria-label="Stop AI comparison" id="comparisonSpeechStop" title="Stop"
+                                    type="button">
+                                    <i class="fas fa-stop"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="ai-response-text" id="comparisonAiResponse">{{ response }}</div>
+                        <div class="ai-response-footer">
+                            <span class="speech-status">
+                                <i class="fas fa-volume-high"></i>
+                                <span id="comparisonSpeechStatus">
+                                    Ready to read
+                                </span>
+                            </span>
+                            <div class="response-actions">
+                                <button class="response-action" id="comparisonPrintBtn" type="button">
+                                    <i class="fas fa-file-pdf"></i>
+                                    PDF
+                                </button>
+                                <button class="response-action" id="comparisonDocBtn" type="button">
+                                    <i class="fas fa-file-word"></i>
+                                    DOC
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {% endif %}
+
+            </div>
+        </section>
+    </main>
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+    <footer class="moto-footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a class="footer-logo" href="/">
+                        <img alt="Moto Genie Logo" src="/static/images/logo.png" />
+                        <span>
+                            Moto <strong>Genie</strong>
+                        </span>
+                    </a>
+                    <p>
+                        An AI-powered vehicle assistant that makes it easier
+                        to explore cars and bikes, understand specifications,
+                        compare models, and get useful vehicle information.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <span class="footer-label">
+                        EXPLORE
+                    </span>
+                    <h4>
+                        Services
+                    </h4>
+                    <ul>
+                        <li>
+                            <a href="/car_specification">
+                                <i class="fas fa-car"></i>
+                                Car Specifications
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/car_comparison">
+                                <i class="fas fa-scale-balanced"></i>
+                                Car Comparison
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/bike_specification">
+                                <i class="fas fa-motorcycle"></i>
+                                Bike Specifications
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/bike_comparison">
+                                <i class="fas fa-scale-balanced"></i>
+                                Bike Comparison
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/fuel_cost">
+                                <i class="fas fa-gas-pump"></i>
+                                Fuel Cost Calculator
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <span class="footer-label">
+                        MOTO GENIE
+                    </span>
+                    <h4>
+                        Quick Links
+                    </h4>
+                    <ul>
+                        <li>
+                            <a href="/">
+                                <i class="fas fa-house"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#about">
+                                <i class="fas fa-circle-info"></i>
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#services">
+                                <i class="fas fa-gears"></i>
+                                Services
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-contact">
+                    <span class="footer-label">
+                        GET IN TOUCH
+                    </span>
+                    <h4>
+                        Contact
+                    </h4>
+                    <a class="footer-contact-item" href="mailto:motogenie@gmail.com">
+                        <span class="footer-contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <span>
+                            motogenie@gmail.com
+                        </span>
+                    </a>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </span>
+                        <span>
+                            +91 - XXXXXXXXXX
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>
+                    © 2026 Moto Genie.
+                    <span>All Rights Reserved.</span>
+                </p>
+                <p class="footer-built">
+                    Built with
+                    <i class="fas fa-heart"></i>
+                    &amp; AI
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Company / Model data -->
+    <script id="companyModelsData" type="application/json">
+        {{ company_models | tojson }}
+    </script>
+    <!-- Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- Main JavaScript -->
+
+    <!-- JavaScript -->
+    <script src="/static/js/script.js"></script>
+
+    <!-- Preloader-->
+    <script src="/static/js/preloader.js"></script>
+
+    <!-- Navbar-->
+    <script src="/static/js/navbar.js"></script>
+
+    <!-- Car Specification-->
+    <script src="/static/js/car-comparison.js"></script>
+</body>
+
+</html>

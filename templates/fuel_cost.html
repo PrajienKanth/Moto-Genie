@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Fuel Cost Calculator | Moto Genie</title>
+
+    <!-- Main CSS -->
+    <link href="/static/css/style.css" rel="stylesheet" />
+    <link href="/static/css/navbar.css" rel="stylesheet" />
+    <link href="/static/css/preloader.css" rel="stylesheet" />
+    <link href="/static/css/fuel-cost.css" rel="stylesheet" />
+
+    <!-- Favicon -->
+    <link href="/static/images/logo.png" rel="icon" type="image/x-icon" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <!-- AOS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-main" id="navbar">
+        <div class="navbar-inner">
+            <a aria-label="Moto Genie Home" class="brand" href="/">
+                <img alt="Moto Genie Logo" class="brand-logo" src="/static/images/logo.png" />
+                <span class="brand-name">Moto <span>Genie</span></span>
+            </a>
+            <button aria-controls="nav-links" aria-expanded="false" aria-label="Open navigation menu" class="hamburger"
+                id="hamburger" type="button">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav" id="nav-links">
+                <ul>
+                    <li><a class="nav-link" href="/"><i class="fas fa-house"></i><span>Home</span></a></li>
+                    <li><a class="nav-link" href="/#about"><i class="fas fa-circle-info"></i><span>About</span></a></li>
+                    <li class="nav-dropdown">
+                        <button aria-expanded="false" aria-haspopup="true" class="nav-link nav-dropdown-toggle"
+                            type="button">
+                            <i class="fas fa-car"></i><span>Cars</span>
+                        </button>
+                        <div class="nav-dropdown-menu" role="menu">
+                            <a class="nav-dropdown-item" href="/car" role="menuitem"><span class="nav-dropdown-icon"><i
+                                        class="fas fa-car-side"></i></span><span><strong>Car
+                                        Explorer</strong><small>Browse available cars</small></span></a>
+                            <a class="nav-dropdown-item" href="/car_specification" role="menuitem"><span
+                                    class="nav-dropdown-icon"><i class="fas fa-list-check"></i></span><span><strong>Car
+                                        Specifications</strong><small>View detailed specifications</small></span></a>
+                            <a class="nav-dropdown-item" href="/car_comparison" role="menuitem"><span
+                                    class="nav-dropdown-icon"><i
+                                        class="fas fa-scale-balanced"></i></span><span><strong>Car
+                                        Comparison</strong><small>Compare car models</small></span></a>
+                        </div>
+                    </li>
+                    <li class="nav-dropdown">
+                        <button aria-expanded="false" aria-haspopup="true" class="nav-link nav-dropdown-toggle"
+                            type="button">
+                            <i class="fas fa-motorcycle"></i><span>Bikes</span>
+                        </button>
+                        <div class="nav-dropdown-menu" role="menu">
+                            <a class="nav-dropdown-item" href="/bike" role="menuitem"><span class="nav-dropdown-icon"><i
+                                        class="fas fa-motorcycle"></i></span><span><strong>Bike
+                                        Explorer</strong><small>Browse available bikes</small></span></a>
+                            <a class="nav-dropdown-item" href="/bike_specification" role="menuitem"><span
+                                    class="nav-dropdown-icon"><i class="fas fa-list-check"></i></span><span><strong>Bike
+                                        Specifications</strong><small>View detailed specifications</small></span></a>
+                            <a class="nav-dropdown-item" href="/bike_comparison" role="menuitem"><span
+                                    class="nav-dropdown-icon"><i
+                                        class="fas fa-scale-balanced"></i></span><span><strong>Bike
+                                        Comparison</strong><small>Compare bike models</small></span></a>
+                        </div>
+                    </li>
+                    <li><a class="nav-link" href="/#services"><i class="fas fa-gears"></i><span>Services</span></a></li>
+                    <li><a class="nav-link active" href="/fuel_cost"><i class="fas fa-gas-pump"></i><span>Fuel
+                                Cost</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FUEL COST HERO -->
+    <section class="fuel-hero" data-aos="fade-up">
+        <div class="fuel-hero-container">
+            <span class="fuel-label">
+                <i class="fas fa-gas-pump"></i>
+
+                MOTO GENIE UTILITY
+
+            </span>
+            <h1>
+
+                Calculate your
+                <span>travel cost.</span>
+            </h1>
+            <p>
+
+                Estimate how much you will spend on fuel or
+                electricity based on your vehicle efficiency,
+                travel distance, and current energy price.
+
+            </p>
+        </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section class="fuel-calculator-section" data-aos="fade-up">
+        <div class="fuel-calculator-container">
+
+            <!-- Calculator Header -->
+            <div class="calculator-heading">
+                <div>
+                    <span class="section-label">
+                        COST CALCULATOR
+                    </span>
+                    <h2>
+
+                        Plan your
+                        <span>journey.</span>
+                    </h2>
+                </div>
+                <div class="calculator-icon">
+                    <i class="fas fa-route"></i>
+                </div>
+            </div>
+
+            <!-- CALCULATOR CARD -->
+            <div class="fuel-calculator-card">
+                
+                <!-- FUEL TYPE -->
+                <div class="fuel-field">
+                    <label>
+                        <i class="fas fa-droplet"></i>
+
+                        Fuel / Energy Type
+
+                    </label>
+                    <div class="moto-dropdown" data-dropdown="" data-input="fuelType">
+                        <button class="moto-dropdown-button" data-dropdown-button="" type="button">
+                            <span class="moto-dropdown-selected">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>
+                                    Petrol
+                                </span>
+                            </span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </button>
+                        <div class="moto-dropdown-menu">
+                            <button class="moto-dropdown-option active" data-value="petrol" type="button">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>
+                                    Petrol
+                                </span>
+                                <i class="fas fa-check option-check"></i>
+                            </button>
+                            <button class="moto-dropdown-option" data-value="diesel" type="button">
+                                <i class="fas fa-oil-can"></i>
+                                <span>
+                                    Diesel
+                                </span>
+                                <i class="fas fa-check option-check"></i>
+                            </button>
+                            <button class="moto-dropdown-option" data-value="gas" type="button">
+                                <i class="fas fa-fire-flame-simple"></i>
+                                <span>
+                                    Gas
+                                </span>
+                                <i class="fas fa-check option-check"></i>
+                            </button>
+                            <button class="moto-dropdown-option" data-value="electric" type="button">
+                                <i class="fas fa-bolt"></i>
+                                <span>
+                                    Electric (EV)
+                                </span>
+                                <i class="fas fa-check option-check"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <input id="fuelType" type="hidden" value="petrol" />
+                </div>
+
+                <!-- VEHICLE EFFICIENCY -->
+                <div class="fuel-field">
+                    <label for="fuelEfficiency">
+                        <i class="fas fa-gauge-high"></i>
+
+                        Vehicle Efficiency
+
+                    </label>
+                    <div class="fuel-input-group">
+                        <input class="fuel-input" id="fuelEfficiency" min="0" placeholder="e.g. 15" step="0.01"
+                            type="number" />
+                        
+                            <!-- Efficiency Dropdown -->
+                        <div class="moto-dropdown" data-dropdown="" data-input="efficiencyUnit">
+                            <button class="moto-dropdown-button" data-dropdown-button="" type="button">
+                                <span class="moto-dropdown-selected">
+                                    <i class="fas fa-gauge-high"></i>
+                                    <span>
+                                        km/l
+                                    </span>
+                                </span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </button>
+                            <div class="moto-dropdown-menu">
+                                <button class="moto-dropdown-option active" data-value="km/l" type="button">
+                                    <i class="fas fa-gauge-high"></i>
+                                    <span>
+                                        km/l
+                                    </span>
+                                    <i class="fas fa-check option-check"></i>
+                                </button>
+                                <button class="moto-dropdown-option" data-value="mpg" type="button">
+                                    <i class="fas fa-road"></i>
+                                    <span>
+                                        mpg
+                                    </span>
+                                    <i class="fas fa-check option-check"></i>
+                                </button>
+                                <button class="moto-dropdown-option" data-value="l/100km" type="button">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>
+                                        l/100km
+                                    </span>
+                                    <i class="fas fa-check option-check"></i>
+                                </button>
+                                <button class="moto-dropdown-option" data-value="kWh/km" type="button">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>
+                                        kWh/km
+                                    </span>
+                                    <i class="fas fa-check option-check"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <input id="efficiencyUnit" type="hidden" value="km/l" />
+                </div>
+                
+                <!-- TRAVEL DISTANCE -->
+                <div class="fuel-field">
+                    <label for="distance">
+                        <i class="fas fa-road"></i>
+
+                        Travel Distance
+
+                    </label>
+                    <div class="fuel-input-group">
+                        <input class="fuel-input" id="distance" min="0" placeholder="e.g. 100" step="0.01"
+                            type="number" />
+                        
+                        <!-- Distance Dropdown -->
+                        <div class="moto-dropdown" data-dropdown="" data-input="distanceUnit">
+                            <button class="moto-dropdown-button" data-dropdown-button="" type="button">
+                                <span class="moto-dropdown-selected">
+                                    <i class="fas fa-road"></i>
+                                    <span>
+                                        Kilometers
+                                    </span>
+                                </span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </button>
+                            <div class="moto-dropdown-menu">
+                                <button class="moto-dropdown-option active" data-value="km" type="button">
+                                    <i class="fas fa-road"></i>
+                                    <span>
+                                        Kilometers
+                                    </span>
+                                    <i class="fas fa-check option-check"></i>
+                                </button>
+                                <button class="moto-dropdown-option" data-value="ml" type="button">
+                                    <i class="fas fa-route"></i>
+                                    <span>
+                                        Miles
+                                    </span>
+                                    <i class="fas fa-check option-check"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <input id="distanceUnit" type="hidden" value="km" />
+                </div>
+
+                <!-- PRICE -->
+                <div class="fuel-field">
+                    <label for="price">
+                        <i class="fas fa-indian-rupee-sign"></i>
+
+                        Fuel / Electricity Price
+
+                    </label>
+                    <div class="fuel-input-group">
+                        <input class="fuel-input" id="price" min="0" placeholder="e.g. 100" step="0.01" type="number" />
+                        
+                        <!-- Currency Dropdown -->
+                        <div class="moto-dropdown" data-dropdown="" data-input="currency">
+                            <button class="moto-dropdown-button" data-dropdown-button="" type="button">
+                                <span class="moto-dropdown-selected">
+                                    <i class="fas fa-indian-rupee-sign"></i>
+                                    <span>
+                                        ₹ INR
+                                    </span>
+                                </span>
+                                <i class="fas fa-chevron-down dropdown-arrow"></i>
+                            </button>
+                            <div class="moto-dropdown-menu">
+                                <button class="moto-dropdown-option active" data-value="INR" type="button">
+                                    <i class="fas fa-indian-rupee-sign"></i>
+                                    <span>
+                                        ₹ INR
+                                    </span>
+                                    <i class="fas fa-check option-check"></i>
+                                </button>
+                                <button class="moto-dropdown-option" data-value="USD" type="button">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <span>
+                                        $ USD
+                                    </span>
+                                    <i class="fas fa-check option-check"></i>
+                                </button>
+                                <button class="moto-dropdown-option" data-value="EUR" type="button">
+                                    <i class="fas fa-euro-sign"></i>
+                                    <span>
+                                        € EUR
+                                    </span>
+                                    <i class="fas fa-check option-check"></i>
+                                </button>
+                                <button class="moto-dropdown-option" data-value="GBP" type="button">
+                                    <i class="fas fa-sterling-sign"></i>
+                                    <span>
+                                        £ GBP
+                                    </span>
+                                    <i class="fas fa-check option-check"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <input id="currency" type="hidden" value="INR" />
+                </div>
+                
+                <!-- CALCULATE BUTTON -->
+                <button class="fuel-calculate-button" onclick="calculateCost()" type="button">
+                    <span>
+                        Calculate Travel Cost
+                    </span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+
+
+
+                {% if fuel_error %}
+                <div class="error" role="alert" style="margin-bottom: 1rem;">
+                    <p>{{ fuel_error }}</p>
+                </div>
+                {% endif %}
+
+
+                <!-- LOADER -->
+                <div class="fuel-loader" id="loader">
+                    <div class="fuel-spinner"></div>
+                    <span>
+                        Calculating your travel cost...
+                    </span>
+                </div>
+                
+                <!-- RESULT -->
+                <div class="fuel-result" id="resultBox">
+                    <div class="fuel-result-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="fuel-result-content">
+                        <span>
+                            ESTIMATED TRAVEL COST
+                        </span>
+                        <strong id="totalCost">
+                            ₹ 0.00
+                        </strong>
+                        <p>
+                            Estimated cost based on the
+                            information you provided.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer class="moto-footer" data-aos="fade-up">
+        <div class="footer-container">
+            <div class="footer-main">
+
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <a class="footer-logo" href="/">
+                        <img alt="Moto Genie Logo" src="/static/images/logo.png" />
+                        <span>
+                            Moto <strong>Genie</strong>
+                        </span>
+                    </a>
+                    <p>
+
+                        An AI-powered vehicle assistant that
+                        makes it easier to explore cars and bikes,
+                        understand specifications, compare models,
+                        and get useful vehicle information.
+
+                    </p>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-column">
+                    <span class="footer-label">
+                        EXPLORE
+                    </span>
+                    <h4>
+                        Services
+                    </h4>
+                    <ul>
+                        <li>
+                            <a href="/car_specification">
+                                <i class="fas fa-car"></i>
+
+                                Car Specifications
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/car_comparison">
+                                <i class="fas fa-scale-balanced"></i>
+
+                                Car Comparison
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/bike_specification">
+                                <i class="fas fa-motorcycle"></i>
+
+                                Bike Specifications
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/bike_comparison">
+                                <i class="fas fa-scale-balanced"></i>
+
+                                Bike Comparison
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/fuel_cost">
+                                <i class="fas fa-gas-pump"></i>
+
+                                Fuel Cost Calculator
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <span class="footer-label">
+                        MOTO GENIE
+                    </span>
+                    <h4>
+                        Quick Links
+                    </h4>
+                    <ul>
+                        <li>
+                            <a href="/">
+                                <i class="fas fa-house"></i>
+
+                                Home
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#about">
+                                <i class="fas fa-circle-info"></i>
+
+                                About
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#services">
+                                <i class="fas fa-gears"></i>
+
+                                Services
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-column footer-contact">
+                    <span class="footer-label">
+                        GET IN TOUCH
+                    </span>
+                    <h4>
+                        Contact
+                    </h4>
+                    <a class="footer-contact-item" href="mailto:motogenie@gmail.com">
+                        <span class="footer-contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <span>
+                            motogenie@gmail.com
+                        </span>
+                    </a>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </span>
+                        <span>
+                            +91 - XXXXXXXXXX
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>
+
+                    © 2026 Moto Genie.
+
+                    <span>
+                        All Rights Reserved.
+                    </span>
+                </p>
+                <p class="footer-built">
+
+                    Built with
+
+                    <i class="fas fa-heart"></i>
+
+                    &amp; AI
+
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="/static/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Car Genie | Moto Genie</title>
+    
+    <!-- Main CSS -->
+    <link href="/static/css/style.css" rel="stylesheet" />
+    
+    <link href="/static/css/navbar.css" rel="stylesheet" />
+    
+    <link href="/static/css/preloader.css" rel="stylesheet" />
+    
+    <link href="/static/css/car.css" rel="stylesheet" />
+    
+    <!-- Favicon -->
+    <link href="/static/images/logo.png" rel="icon" type="image/x-icon" />
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    
+        <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    
+    <!-- AOS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    
+    <!-- Font Awesome -->
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-main" id="navbar">
+        <div class="navbar-inner">
+            <a aria-label="Moto Genie Home" class="brand" href="/">
+                <img alt="Moto Genie Logo" class="brand-logo" src="/static/images/logo.png" />
+                <span class="brand-name">Moto <span>Genie</span></span>
+            </a>
+            <button aria-controls="nav-links" aria-expanded="false" aria-label="Open navigation menu" class="hamburger"
+                id="hamburger" type="button">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav" id="nav-links">
+                <ul>
+                    <li><a class="nav-link" href="/"><i class="fas fa-house"></i><span>Home</span></a></li>
+                    <li><a class="nav-link" href="/#about"><i class="fas fa-circle-info"></i><span>About</span></a></li>
+                    <li class="nav-dropdown">
+                        <button aria-expanded="false" aria-haspopup="true" class="nav-link nav-dropdown-toggle active"
+                            type="button">
+                            <i class="fas fa-car"></i><span>Cars</span>
+                        </button>
+                        <div class="nav-dropdown-menu" role="menu">
+                            <a class="nav-dropdown-item" href="/car" role="menuitem"><span class="nav-dropdown-icon"><i
+                                        class="fas fa-car-side"></i></span><span><strong>Car
+                                        Explorer</strong><small>Browse available cars</small></span></a>
+                            <a class="nav-dropdown-item" href="/car_specification" role="menuitem"><span
+                                    class="nav-dropdown-icon"><i class="fas fa-list-check"></i></span><span><strong>Car
+                                        Specifications</strong><small>View detailed specifications</small></span></a>
+                            <a class="nav-dropdown-item" href="/car_comparison" role="menuitem"><span
+                                    class="nav-dropdown-icon"><i
+                                        class="fas fa-scale-balanced"></i></span><span><strong>Car
+                                        Comparison</strong><small>Compare car models</small></span></a>
+                        </div>
+                    </li>
+                    <li class="nav-dropdown">
+                        <button aria-expanded="false" aria-haspopup="true" class="nav-link nav-dropdown-toggle"
+                            type="button">
+                            <i class="fas fa-motorcycle"></i><span>Bikes</span>
+                        </button>
+                        <div class="nav-dropdown-menu" role="menu">
+                            <a class="nav-dropdown-item" href="/bike" role="menuitem"><span class="nav-dropdown-icon"><i
+                                        class="fas fa-motorcycle"></i></span><span><strong>Bike
+                                        Explorer</strong><small>Browse available bikes</small></span></a>
+                            <a class="nav-dropdown-item" href="/bike_specification" role="menuitem"><span
+                                    class="nav-dropdown-icon"><i class="fas fa-list-check"></i></span><span><strong>Bike
+                                        Specifications</strong><small>View detailed specifications</small></span></a>
+                            <a class="nav-dropdown-item" href="/bike_comparison" role="menuitem"><span
+                                    class="nav-dropdown-icon"><i
+                                        class="fas fa-scale-balanced"></i></span><span><strong>Bike
+                                        Comparison</strong><small>Compare bike models</small></span></a>
+                        </div>
+                    </li>
+                    <li><a class="nav-link" href="/#services"><i class="fas fa-gears"></i><span>Services</span></a></li>
+                    <li><a class="nav-link" href="/fuel_cost"><i class="fas fa-gas-pump"></i><span>Fuel Cost</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- CAR HERO -->
+    <section class="vehicle-hero" data-aos="fade-up">
+        <div class="vehicle-hero-container">
+            <span class="vehicle-label">
+                <i class="fas fa-car"></i>
+
+                CAR GENIE
+
+            </span>
+            <h1>
+
+                Explore cars
+                <span>your way.</span>
+            </h1>
+            <p>
+
+                Discover detailed car specifications, compare
+                different models, and find the information you
+                need to make better vehicle decisions.
+
+            </p>
+            <!-- Vehicle Stats -->
+            <div class="vehicle-stats">
+                <!-- Specification -->
+                <div class="vehicle-stat">
+                    <i class="fas fa-database"></i>
+                    <div>
+                        <strong>
+                            Specifications
+                        </strong>
+                        <span>
+                            Detailed vehicle information
+                        </span>
+                    </div>
+                </div>
+                <!-- Comparison -->
+                <div class="vehicle-stat">
+                    <i class="fas fa-scale-balanced"></i>
+                    <div>
+                        <strong>
+                            Comparison
+                        </strong>
+                        <span>
+                            Compare models easily
+                        </span>
+                    </div>
+                </div>
+                <!-- AI -->
+                <div class="vehicle-stat">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <strong>
+                            AI Assistance
+                        </strong>
+                        <span>
+                            Get intelligent answers
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CAR EXPLORER — HOW IT WORKS -->
+    <section aria-labelledby="car-workflow-title" class="workflow-section workflow-vehicle">
+        <div class="workflow-container">
+            <div class="workflow-heading" data-aos="fade-up">
+                <div>
+                    <span class="workflow-kicker"><i class="fas fa-route"></i> CAR EXPLORER PROCESS</span>
+                    <h2 id="car-workflow-title">From discovery to <span>clear vehicle insight.</span></h2>
+                    <p>Start with the car catalogue, explore the information available for each model, then move into
+                        specifications or comparison when you want a deeper view.</p>
+                </div>
+                <div class="workflow-heading-badge"><i class="fas fa-car-side"></i><span>3 simple steps</span></div>
+            </div>
+            <div class="workflow-grid">
+                <article class="workflow-card" data-aos="fade-up" data-aos-delay="50"><span
+                        class="workflow-number">01</span>
+                    <div class="workflow-icon"><i class="fas fa-magnifying-glass"></i></div>
+                    <h3>Browse the catalogue</h3>
+                    <p>Explore the available car brands and models in Moto Genie and narrow your attention to vehicles
+                        you want to understand.</p><span class="workflow-hint">Discover models</span>
+                </article>
+                <article class="workflow-card" data-aos="fade-up" data-aos-delay="120"><span
+                        class="workflow-number">02</span>
+                    <div class="workflow-icon"><i class="fas fa-list-check"></i></div>
+                    <h3>Open the details</h3>
+                    <p>Move to the specification view to inspect engine, mileage, fuel, performance and other vehicle
+                        information in one place.</p><span class="workflow-hint">Inspect specifications</span>
+                </article>
+                <article class="workflow-card" data-aos="fade-up" data-aos-delay="190"><span
+                        class="workflow-number">03</span>
+                    <div class="workflow-icon"><i class="fas fa-scale-balanced"></i></div>
+                    <h3>Compare when needed</h3>
+                    <p>Select two models for a side-by-side view and use the retrieved vehicle context to understand
+                        their key differences.</p><span class="workflow-hint">Compare models</span>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- CAR SERVICES -->
+    <section class="services-section" data-aos="fade-up" id="car-services">
+        <div class="services-container">
+            <!-- Section Heading -->
+            <div class="section-heading services-heading">
+                <span class="section-label">
+                    CAR SERVICES
+                </span>
+                <h2>
+
+                    What would you like
+                    <span>to explore?</span>
+                </h2>
+                <p class="section-intro">
+
+                    Choose a service below to explore car
+                    information in the way that works best
+                    for you.
+
+                </p>
+            </div>
+            <!-- Service Cards -->
+            <div class="services-grid">
+                <!-- =================================================
+                     CAR SPECIFICATION
+                     ================================================= -->
+                <article class="service-card" data-aos="fade-right">
+                    <!-- Image -->
+                    <div class="service-image-wrapper">
+                        <img alt="Car Specification" class="service-image"
+                            src="/static/images/car_specification.jpeg" />
+                        <div class="service-image-overlay"></div>
+                        <span class="service-category">
+                            <i class="fas fa-car"></i>
+
+                            CAR SPECIFICATIONS
+
+                        </span>
+                    </div>
+                    <!-- Content -->
+                    <div class="service-content">
+                        <div class="service-title-row">
+                            <div>
+                                <span class="service-number">
+                                    01
+                                </span>
+                                <h3>
+                                    Car Specification
+                                </h3>
+                            </div>
+                            <div class="service-icon">
+                                <i class="fas fa-car-side"></i>
+                            </div>
+                        </div>
+                        <p>
+
+                            Explore detailed specifications,
+                            features, performance, mileage,
+                            and other important information
+                            about car models.
+
+                        </p>
+                        <!-- Tags -->
+                        <div class="service-tags">
+                            <span>
+                                Specifications
+                            </span>
+                            <span>
+                                Features
+                            </span>
+                            <span>
+                                Performance
+                            </span>
+                        </div>
+                        <!-- Button -->
+                        <a class="service-button" href="/car_specification">
+                            <span>
+                                Explore Cars
+                            </span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                <!-- =================================================
+                     CAR COMPARISON
+                     ================================================= -->
+                <article class="service-card" data-aos="fade-left">
+                    <!-- Image -->
+                    <div class="service-image-wrapper">
+                        <img alt="Car Comparison" class="service-image" src="/static/images/car_comparison.jpeg" />
+                        <div class="service-image-overlay"></div>
+                        <span class="service-category">
+                            <i class="fas fa-scale-balanced"></i>
+
+                            CAR COMPARISON
+
+                        </span>
+                    </div>
+                    <!-- Content -->
+                    <div class="service-content">
+                        <div class="service-title-row">
+                            <div>
+                                <span class="service-number">
+                                    02
+                                </span>
+                                <h3>
+                                    Car Comparison
+                                </h3>
+                            </div>
+                            <div class="service-icon">
+                                <i class="fas fa-scale-balanced"></i>
+                            </div>
+                        </div>
+                        <p>
+
+                            Compare two car models side by side
+                            and understand their differences
+                            in features, specifications,
+                            and performance.
+
+                        </p>
+                        <!-- Tags -->
+                        <div class="service-tags">
+                            <span>
+                                Comparison
+                            </span>
+                            <span>
+                                Features
+                            </span>
+                            <span>
+                                Performance
+                            </span>
+                        </div>
+                        <!-- Button -->
+                        <a class="service-button" href="/car_comparison">
+                            <span>
+                                Compare Cars
+                            </span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="moto-footer" data-aos="fade-up">
+        <div class="footer-container">
+            <div class="footer-main">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <a class="footer-logo" href="/">
+                        <img alt="Moto Genie Logo" src="/static/images/logo.png" />
+                        <span>
+                            Moto <strong>Genie</strong>
+                        </span>
+                    </a>
+                    <p>
+
+                        An AI-powered vehicle assistant that
+                        makes it easier to explore cars and bikes,
+                        understand specifications, compare models,
+                        and get useful vehicle information.
+
+                    </p>
+                </div>
+                <!-- Services -->
+                <div class="footer-column">
+                    <span class="footer-label">
+                        EXPLORE
+                    </span>
+                    <h4>
+                        Services
+                    </h4>
+                    <ul>
+                        <li>
+                            <a href="/car_specification">
+                                <i class="fas fa-car"></i>
+
+                                Car Specifications
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/car_comparison">
+                                <i class="fas fa-scale-balanced"></i>
+
+                                Car Comparison
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/bike_specification">
+                                <i class="fas fa-motorcycle"></i>
+
+                                Bike Specifications
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/bike_comparison">
+                                <i class="fas fa-scale-balanced"></i>
+
+                                Bike Comparison
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/fuel_cost">
+                                <i class="fas fa-gas-pump"></i>
+
+                                Fuel Cost Calculator
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <span class="footer-label">
+                        MOTO GENIE
+                    </span>
+                    <h4>
+                        Quick Links
+                    </h4>
+                    <ul>
+                        <li>
+                            <a href="/">
+                                <i class="fas fa-house"></i>
+
+                                Home
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#about">
+                                <i class="fas fa-circle-info"></i>
+
+                                About
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/#services">
+                                <i class="fas fa-gears"></i>
+
+                                Services
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div class="footer-column footer-contact">
+                    <span class="footer-label">
+                        GET IN TOUCH
+                    </span>
+                    <h4>
+                        Contact
+                    </h4>
+                    <a class="footer-contact-item" href="mailto:motogenie@gmail.com">
+                        <span class="footer-contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <span>
+                            motogenie@gmail.com
+                        </span>
+                    </a>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </span>
+                        <span>
+                            +91 - XXXXXXXXXX
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>
+
+                    © 2026 Moto Genie.
+                    <span>
+                        All Rights Reserved.
+                    </span>
+                </p>
+                <p class="footer-built">
+
+                    Built with
+
+                    <i class="fas fa-heart"></i>
+
+                    &amp; AI
+
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- SCRIPTS -->
+
+    <script src="/static/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+
+        AOS.init({
+            duration: 700,
+            once: false,
+            mirror: true,
+            offset: 80
+        });
+
+    </script>
+</body>
+
+</html>

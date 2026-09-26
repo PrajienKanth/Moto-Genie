@@ -1,0 +1,1104 @@
+/* FUEL COST PAGE */
+
+.fuel-hero {
+    position: relative;
+
+    padding: 155px 0 70px;
+
+    background:
+        radial-gradient(circle at 75% 30%,
+            rgba(88, 171, 212, 0.09),
+            transparent 32%),
+        rgb(1, 18, 36);
+
+    overflow: hidden;
+}
+
+
+.fuel-hero::after {
+    content: "";
+
+    position: absolute;
+
+    right: -180px;
+    top: 80px;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(88, 171, 212, 0.06);
+
+    box-shadow:
+        0 0 0 70px rgba(88, 171, 212, 0.018),
+        0 0 0 140px rgba(88, 171, 212, 0.012);
+
+    pointer-events: none;
+}
+
+
+.fuel-hero-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(100% - 50px, 1050px);
+
+    margin: 0 auto;
+}
+
+
+.fuel-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+
+    color: #58abd4;
+
+    font-family: "Lexend", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2.5px;
+}
+
+
+.fuel-label i {
+    font-size: 12px;
+}
+
+
+.fuel-hero h1 {
+    max-width: 750px;
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: "Raleway", sans-serif;
+
+    font-size: clamp(46px, 6vw, 70px);
+
+    font-weight: 600;
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+
+.fuel-hero h1 span {
+    color: #58abd4;
+}
+
+
+.fuel-hero-container>p {
+    max-width: 650px;
+
+    margin: 24px 0 0;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-family: "Lexend", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.85;
+}
+
+
+
+/* 
+       CALCULATOR SECTION
+        */
+
+.fuel-calculator-section {
+    position: relative;
+
+    padding: 75px 0 120px;
+
+    background: rgb(1, 18, 36);
+}
+
+
+.fuel-calculator-container {
+    width: min(100% - 50px, 950px);
+
+    margin: 0 auto;
+}
+
+
+/* 
+       CALCULATOR HEADING
+        */
+
+.calculator-heading {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+}
+
+
+.calculator-heading h2 {
+    margin: 8px 0 0;
+
+    color: #ffffff;
+
+    font-family: "Raleway", sans-serif;
+
+    font-size: 38px;
+
+    font-weight: 600;
+
+    line-height: 1.1;
+}
+
+
+.calculator-heading h2 span {
+    color: #58abd4;
+}
+
+
+.calculator-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 55px;
+    height: 55px;
+
+    border:
+        1px solid rgba(88, 171, 212, 0.20);
+
+    border-radius: 16px;
+
+    background:
+        rgba(88, 171, 212, 0.08);
+
+    color: #58abd4;
+
+    font-size: 18px;
+}
+
+
+
+/* 
+       CALCULATOR CARD
+        */
+
+.fuel-calculator-card {
+    position: relative;
+
+    padding: 35px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.018));
+
+    box-shadow:
+        0 25px 65px rgba(0, 0, 0, 0.28);
+}
+
+
+
+/* 
+       FORM GRID
+        */
+
+.fuel-calculator-card {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+.fuel-field {
+    min-width: 0;
+}
+
+
+.fuel-field label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 9px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-family: "Lexend", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 500;
+}
+
+
+.fuel-field label i {
+    color: #58abd4;
+
+    font-size: 11px;
+}
+
+
+
+/* 
+       INPUTS
+        */
+
+.fuel-input {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 0 14px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    color: #ffffff;
+
+    font-family: "Lexend", sans-serif;
+
+    font-size: 12px;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.fuel-input::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+
+.fuel-input:focus {
+    border-color:
+        rgba(88, 171, 212, 0.45);
+
+    background:
+        rgba(88, 171, 212, 0.035);
+
+    box-shadow:
+        0 0 0 3px rgba(88, 171, 212, 0.06);
+}
+
+
+.fuel-input option {
+    background: #071c30;
+
+    color: #ffffff;
+}
+
+
+
+/* 
+       INPUT + UNIT GROUP
+        */
+
+.fuel-input-group {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 125px;
+
+    gap: 8px;
+}
+
+
+.fuel-unit {
+    cursor: pointer;
+}
+
+
+
+/* 
+       CALCULATE BUTTON
+        */
+
+.fuel-calculate-button {
+    grid-column: 1 / -1;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    min-height: 52px;
+
+    margin-top: 8px;
+
+    padding: 0 18px;
+
+    border:
+        1px solid rgba(88, 171, 212, 0.32);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background:
+        rgba(88, 171, 212, 0.09);
+
+    color: #ffffff;
+
+    font-family: "Lexend", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.fuel-calculate-button i {
+    color: #58abd4;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.fuel-calculate-button:hover {
+    background:
+        rgba(88, 171, 212, 0.16);
+
+    border-color:
+        rgba(88, 171, 212, 0.50);
+
+    transform: translateY(-2px);
+}
+
+
+.fuel-calculate-button:hover i {
+    transform: translateX(5px);
+}
+
+
+
+/* 
+       LOADER
+        */
+
+.fuel-loader {
+    grid-column: 1 / -1;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 18px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-family: "Lexend", sans-serif;
+
+    font-size: 10px;
+}
+
+
+.fuel-spinner {
+    width: 22px;
+    height: 22px;
+
+    border:
+        2px solid rgba(255, 255, 255, 0.08);
+
+    border-top-color: #58abd4;
+
+    border-radius: 50%;
+
+    animation:
+        fuelSpin 0.8s linear infinite;
+}
+
+
+@keyframes fuelSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+
+/* 
+       RESULT
+        */
+
+.fuel-result {
+    grid-column: 1 / -1;
+
+    display: none;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 5px;
+
+    padding: 22px;
+
+    border:
+        1px solid rgba(88, 171, 212, 0.20);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(88, 171, 212, 0.10),
+            rgba(88, 171, 212, 0.035));
+
+    animation:
+        fuelResultIn 0.5s ease;
+}
+
+
+.fuel-result-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 52px;
+    height: 52px;
+
+    border:
+        1px solid rgba(88, 171, 212, 0.20);
+
+    border-radius: 14px;
+
+    background:
+        rgba(88, 171, 212, 0.09);
+
+    color: #58abd4;
+
+    font-size: 17px;
+}
+
+
+.fuel-result-content>span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: rgba(255, 255, 255, 0.38);
+
+    font-family: "Lexend", sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.8px;
+}
+
+
+.fuel-result-content strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-family: "Raleway", sans-serif;
+
+    font-size: 28px;
+
+    font-weight: 600;
+
+    line-height: 1.1;
+}
+
+
+.fuel-result-content p {
+    margin: 5px 0 0;
+
+    color: rgba(255, 255, 255, 0.40);
+
+    font-family: "Lexend", sans-serif;
+
+    font-size: 9px;
+}
+
+
+@keyframes fuelResultIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+
+/* 
+       RESPONSIVE — TABLET
+        */
+
+@media (max-width: 900px) {
+
+    .fuel-hero {
+        padding: 145px 0 65px;
+    }
+
+
+    .fuel-calculator-section {
+        padding: 65px 0 100px;
+    }
+
+
+    .fuel-calculator-container {
+        width: min(100% - 40px, 950px);
+    }
+
+
+    .fuel-calculator-card {
+        padding: 28px;
+    }
+
+}
+
+
+
+/* 
+       RESPONSIVE — MOBILE
+        */
+
+@media (max-width: 700px) {
+
+    .fuel-hero {
+        padding: 130px 0 60px;
+    }
+
+
+    .fuel-hero-container {
+        width: min(100% - 30px, 1050px);
+    }
+
+
+    .fuel-hero h1 {
+        font-size: 44px;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .fuel-hero-container>p {
+        font-size: 12px;
+    }
+
+
+    .fuel-calculator-section {
+        padding: 55px 0 85px;
+    }
+
+
+    .fuel-calculator-container {
+        width: min(100% - 30px, 950px);
+    }
+
+
+    .calculator-heading {
+        align-items: center;
+    }
+
+
+    .calculator-heading h2 {
+        font-size: 32px;
+    }
+
+
+    .fuel-calculator-card {
+        grid-template-columns: 1fr;
+
+        padding: 22px;
+
+        border-radius: 20px;
+    }
+
+
+    .fuel-calculate-button,
+    .fuel-loader,
+    .fuel-result {
+        grid-column: auto;
+    }
+
+
+    .fuel-input-group {
+        grid-template-columns:
+            minmax(0, 1fr) 110px;
+    }
+
+}
+
+
+
+/* 
+       RESPONSIVE — SMALL MOBILE
+        */
+
+@media (max-width: 500px) {
+
+    .fuel-hero h1 {
+        font-size: 38px;
+    }
+
+
+    .calculator-heading h2 {
+        font-size: 28px;
+    }
+
+
+    .calculator-icon {
+        width: 46px;
+        height: 46px;
+
+        font-size: 15px;
+    }
+
+
+    .fuel-calculator-card {
+        padding: 18px;
+    }
+
+
+    .fuel-input-group {
+        grid-template-columns: 1fr;
+    }
+
+
+    .fuel-unit {
+        min-height: 44px;
+    }
+
+
+    .fuel-result {
+        align-items: flex-start;
+
+        padding: 18px;
+    }
+
+
+    .fuel-result-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+
+    .fuel-result-content strong {
+        font-size: 24px;
+    }
+
+}
+
+.moto-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+
+.moto-dropdown-button {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    min-height: 48px;
+
+    padding: 0 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 11px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.018));
+
+    color: #ffffff;
+
+    font-family: "Lexend", sans-serif;
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.moto-dropdown-button:hover {
+
+    border-color:
+        rgba(88, 171, 212, 0.30);
+
+    background:
+        rgba(88, 171, 212, 0.045);
+
+}
+
+
+.moto-dropdown.open .moto-dropdown-button {
+
+    border-color:
+        rgba(88, 171, 212, 0.50);
+
+    background:
+        rgba(88, 171, 212, 0.07);
+
+    box-shadow:
+        0 0 0 3px rgba(88, 171, 212, 0.06);
+
+}
+
+
+.moto-dropdown-selected {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+
+.moto-dropdown-selected i {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+
+    border-radius: 7px;
+
+    background:
+        rgba(88, 171, 212, 0.10);
+
+    color: #58abd4;
+
+    font-size: 10px;
+
+}
+
+
+.dropdown-arrow {
+
+    color: #58abd4;
+    font-size: 8px;
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.moto-dropdown.open .dropdown-arrow {
+
+    transform: rotate(180deg);
+
+}
+
+
+.moto-dropdown-menu {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+
+    padding: 7px;
+
+    border: 1px solid rgba(88, 171, 212, 0.20);
+    border-radius: 14px;
+
+    /* Solid background */
+    background: #0b2438;
+
+    /* Remove transparency effect */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.50);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translateY(-8px) scale(0.98);
+
+    transform-origin: top;
+
+    transition:
+        opacity 0.22s ease,
+        transform 0.22s ease,
+        visibility 0.22s ease;
+
+    z-index: 100;
+}
+
+
+.moto-dropdown.open .moto-dropdown-menu {
+
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(0) scale(1);
+
+}
+
+
+.moto-dropdown-option {
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    gap: 11px;
+
+    padding: 10px 11px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: transparent;
+
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    font-family:
+        "Lexend", sans-serif;
+
+    font-size: 10px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.moto-dropdown-option>i:first-child {
+
+    width: 20px;
+
+    color:
+        rgba(255, 255, 255, 0.35);
+
+    font-size: 10px;
+
+    text-align: center;
+
+    transition:
+        color 0.2s ease;
+
+}
+
+
+.moto-dropdown-option:hover {
+
+    background:
+        rgba(88, 171, 212, 0.08);
+
+    color: #ffffff;
+
+    transform:
+        translateX(3px);
+
+}
+
+
+.moto-dropdown-option:hover>i:first-child {
+
+    color: #58abd4;
+
+}
+
+
+.moto-dropdown-option.active {
+
+    background:
+        rgba(88, 171, 212, 0.10);
+
+    color: #ffffff;
+
+}
+
+
+.moto-dropdown-option.active>i:first-child {
+
+    color: #58abd4;
+
+}
+
+
+.option-check {
+
+    margin-left: auto;
+
+    color: #58abd4;
+
+    font-size: 8px;
+
+    opacity: 0;
+
+}
+
+
+.moto-dropdown-option.active .option-check {
+
+    opacity: 1;
+
+}
+
+
+/* 
+       CALCULATOR FIELD FIXES
+        */
+
+
+.fuel-input-group {
+
+    position: relative;
+    display: flex;
+    gap: 8px;
+
+}
+
+
+.fuel-input-group>.fuel-input {
+
+    flex: 1;
+    min-width: 0;
+
+}
+
+
+.fuel-input-group>.moto-dropdown {
+
+    width: 150px;
+    flex-shrink: 0;
+
+}
+
+
+/* 
+       RESPONSIVE
+        */
+
+@media (max-width: 700px) {
+
+    .fuel-input-group {
+
+        flex-direction: column;
+        gap: 10px;
+
+    }
+
+
+    .fuel-input-group>.moto-dropdown {
+
+        width: 100%;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .moto-dropdown-button {
+
+        min-height: 46px;
+        padding: 0 13px;
+
+    }
+
+
+    .moto-dropdown-menu {
+
+        border-radius: 12px;
+
+    }
+
+
+    .moto-dropdown-option {
+
+        padding: 11px;
+
+    }
+
+}

@@ -1,0 +1,1375 @@
+/* =========================================================
+      BIKE HERO
+      ========================================================= */
+
+.bike-hero {
+    position: relative;
+    min-height: 58vh;
+    display: flex;
+    align-items: center;
+    padding: 150px 0 80px;
+    background:
+        radial-gradient(circle at 78% 30%,
+            rgba(88, 171, 212, 0.1),
+            transparent 31%),
+        radial-gradient(circle at 15% 80%,
+            rgba(88, 171, 212, 0.035),
+            transparent 28%),
+        rgb(1, 18, 36);
+    overflow: hidden;
+}
+
+.bike-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(rgba(88, 171, 212, 0.025) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(88, 171, 212, 0.025) 1px,
+            transparent 1px);
+    background-size: 70px 70px;
+    mask-image: linear-gradient(to bottom,
+            black,
+            transparent 90%);
+    pointer-events: none;
+}
+
+.bike-hero::after {
+    content: "";
+    position: absolute;
+    right: -180px;
+    bottom: -220px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(88, 171, 212, 0.07);
+    box-shadow:
+        0 0 0 80px rgba(88, 171, 212, 0.02),
+        0 0 0 160px rgba(88, 171, 212, 0.015);
+    pointer-events: none;
+}
+
+.bike-hero-container {
+    position: relative;
+    z-index: 2;
+    width: min(calc(100% - 50px), 1050px);
+    margin: 0 auto;
+}
+
+.bike-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    color: #58abd4;
+    font-family: "Lexend", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+}
+
+.bike-label i {
+    font-size: 12px;
+}
+
+.bike-hero h1 {
+    max-width: 750px;
+    margin: 0;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    font-size: clamp(48px, 7vw, 78px);
+    font-weight: 600;
+    line-height: 1.02;
+    letter-spacing: -2px;
+}
+
+.bike-hero h1 span {
+    color: #58abd4;
+}
+
+.bike-hero-container>p {
+    max-width: 650px;
+    margin: 25px 0 40px;
+    color: rgba(255, 255, 255, 0.55);
+    font-family: "Lexend", sans-serif;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.bike-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.bike-stat {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 185px;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.025);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.025),
+        0 15px 35px rgba(0, 0, 0, 0.12);
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+}
+
+.bike-stat:hover {
+    transform: translateY(-5px);
+    border-color: rgba(88, 171, 212, 0.2);
+    background: rgba(88, 171, 212, 0.045);
+}
+
+.bike-stat>i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: rgba(88, 171, 212, 0.09);
+    color: #58abd4;
+    font-size: 12px;
+}
+
+.bike-stat strong {
+    display: block;
+    margin-bottom: 3px;
+    color: #fff;
+    font-family: "Lexend", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.bike-stat span {
+    display: block;
+    color: rgba(255, 255, 255, 0.38);
+    font-family: "Lexend", sans-serif;
+    font-size: 8px;
+}
+
+
+/* =========================================================
+      WORKFLOW
+      ========================================================= */
+
+.workflow-section {
+    position: relative;
+    padding: 110px 0;
+    background:
+        linear-gradient(180deg,
+            rgb(1, 18, 36),
+            rgb(2, 15, 30));
+    overflow: hidden;
+}
+
+.workflow-section::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 600px;
+    height: 300px;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse,
+            rgba(88, 171, 212, 0.045),
+            transparent 70%);
+    pointer-events: none;
+}
+
+.workflow-container {
+    position: relative;
+    z-index: 2;
+    width: min(calc(100% - 50px), 1050px);
+    margin: 0 auto;
+}
+
+.workflow-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 55px;
+}
+
+.workflow-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    color: #58abd4;
+    font-family: "Lexend", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.workflow-kicker i {
+    font-size: 10px;
+}
+
+.workflow-heading h2 {
+    max-width: 700px;
+    margin: 0;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    font-size: clamp(34px, 5vw, 54px);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+}
+
+.workflow-heading h2 span {
+    color: #58abd4;
+}
+
+.workflow-heading p {
+    max-width: 650px;
+    margin: 18px 0 0;
+    color: rgba(255, 255, 255, 0.46);
+    font-family: "Lexend", sans-serif;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.workflow-heading-badge {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-shrink: 0;
+    padding: 11px 14px;
+    border: 1px solid rgba(88, 171, 212, 0.14);
+    border-radius: 12px;
+    background: rgba(88, 171, 212, 0.045);
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.workflow-heading-badge i {
+    color: #58abd4;
+}
+
+.workflow-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.workflow-grid::before {
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: 13%;
+    right: 13%;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(88, 171, 212, 0.14),
+            transparent);
+    pointer-events: none;
+}
+
+.workflow-card {
+    position: relative;
+    min-height: 300px;
+    padding: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.065);
+    border-radius: 23px;
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.012));
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    overflow: hidden;
+    transition:
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.4s ease,
+        box-shadow 0.5s ease;
+}
+
+.workflow-card::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(88, 171, 212, 0.055);
+    filter: blur(30px);
+    pointer-events: none;
+}
+
+.workflow-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(88, 171, 212, 0.2);
+    box-shadow:
+        0 35px 80px rgba(0, 0, 0, 0.3),
+        0 0 35px rgba(88, 171, 212, 0.045);
+}
+
+.workflow-number {
+    position: absolute;
+    top: 20px;
+    right: 23px;
+    color: rgba(88, 171, 212, 0.28);
+    font-family: "Raleway", sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.workflow-icon {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(88, 171, 212, 0.16);
+    border-radius: 15px;
+    background: rgba(88, 171, 212, 0.07);
+    color: #58abd4;
+    font-size: 17px;
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
+}
+
+.workflow-card:hover .workflow-icon {
+    transform: translateY(-3px) scale(1.05);
+    border-color: rgba(88, 171, 212, 0.3);
+    background: rgba(88, 171, 212, 0.13);
+}
+
+.workflow-card h3 {
+    position: relative;
+    z-index: 2;
+    margin: 0 0 13px;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.workflow-card p {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.45);
+    font-family: "Lexend", sans-serif;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.workflow-hint {
+    position: absolute;
+    left: 28px;
+    bottom: 25px;
+    color: rgba(88, 171, 212, 0.7);
+    font-family: "Lexend", sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+      SERVICES
+      ========================================================= */
+
+#bike-services {
+    padding-top: 110px;
+}
+
+.services-section {
+    position: relative;
+    padding: 0 0 120px;
+    background: rgb(1, 18, 36);
+    overflow: visible;
+}
+
+.services-container {
+    width: min(calc(100% - 50px), 1150px);
+    margin: 0 auto;
+}
+
+.services-heading {
+    margin-bottom: 65px;
+}
+
+.section-heading {
+    position: relative;
+}
+
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    min-height: 25px;
+    padding: 5px 10px;
+    border: 1px solid rgba(88, 171, 212, 0.12);
+    border-radius: 7px;
+    background: rgba(88, 171, 212, 0.045);
+    color: #58abd4;
+    font-family: "Lexend", sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    max-width: 700px;
+    margin: 18px 0 13px;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 600;
+    line-height: 1.06;
+    letter-spacing: -1.5px;
+}
+
+.section-heading h2 span {
+    color: #58abd4;
+}
+
+.section-intro {
+    max-width: 620px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.45);
+    font-family: "Lexend", sans-serif;
+    font-size: 12px;
+    line-height: 1.85;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    border-radius: 26px;
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.018));
+    box-shadow:
+        0 25px 65px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    isolation: isolate;
+    transition:
+        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.45s ease,
+        box-shadow 0.55s ease;
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg,
+            transparent 15%,
+            rgba(88, 171, 212, 0.075),
+            transparent 65%);
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+    transition:
+        transform 0.8s ease,
+        opacity 0.5s ease;
+}
+
+.service-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow:
+        inset 0 0 0 1px rgba(88, 171, 212, 0.025);
+    pointer-events: none;
+    z-index: 6;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(88, 171, 212, 0.28);
+    box-shadow:
+        0 35px 85px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(88, 171, 212, 0.065);
+}
+
+.service-card:hover::before {
+    transform: translateX(100%);
+    opacity: 1;
+}
+
+.service-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 0.78;
+    overflow: hidden;
+    background: rgb(1, 18, 36);
+}
+
+.service-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(0.92) contrast(1.04);
+    transition:
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.7s ease;
+}
+
+.service-card:hover .service-image {
+    transform: scale(1.075);
+    filter: saturate(1.05) contrast(1.06);
+}
+
+.service-image-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to bottom,
+            rgba(1, 18, 36, 0.03) 20%,
+            rgba(1, 18, 36, 0.12) 50%,
+            rgba(1, 18, 36, 0.72) 100%);
+    pointer-events: none;
+}
+
+.service-category {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 30px;
+    background: rgba(1, 18, 36, 0.68);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: #fff;
+    font-family: "Lexend", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    z-index: 4;
+    transition:
+        border-color 0.35s ease,
+        background 0.35s ease,
+        transform 0.35s ease;
+}
+
+.service-category i {
+    color: #58abd4;
+    font-size: 11px;
+}
+
+.service-card:hover .service-category {
+    transform: translateY(-2px);
+    border-color: rgba(88, 171, 212, 0.28);
+    background: rgba(3, 30, 50, 0.78);
+}
+
+.service-content {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 29px 29px 30px;
+    background:
+        linear-gradient(180deg,
+            rgba(255, 255, 255, 0.018),
+            rgba(255, 255, 255, 0));
+}
+
+.service-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.service-number {
+    display: block;
+    margin-bottom: 6px;
+    color: #58abd4;
+    font-family: "Lexend", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2.2px;
+}
+
+.service-title-row h3 {
+    margin: 0;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.4px;
+    transition: color 0.35s ease;
+}
+
+.service-card:hover .service-title-row h3 {
+    color: #8bd8f5;
+}
+
+.service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(88, 171, 212, 0.17);
+    border-radius: 15px;
+    background:
+        linear-gradient(145deg,
+            rgba(88, 171, 212, 0.14),
+            rgba(88, 171, 212, 0.045));
+    color: #58abd4;
+    font-size: 17px;
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: translateY(-3px) rotate(-5deg) scale(1.06);
+    background:
+        linear-gradient(145deg,
+            rgba(88, 171, 212, 0.22),
+            rgba(88, 171, 212, 0.08));
+    border-color: rgba(88, 171, 212, 0.28);
+    box-shadow: 0 12px 30px rgba(88, 171, 212, 0.12);
+}
+
+.service-content>p {
+    max-width: 480px;
+    margin: 0 0 21px;
+    color: rgba(255, 255, 255, 0.59);
+    font-family: "Lexend", sans-serif;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 25px;
+}
+
+.service-tags span {
+    padding: 6px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.065);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.025);
+    color: rgba(255, 255, 255, 0.48);
+    font-family: "Lexend", sans-serif;
+    font-size: 9px;
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.service-card:hover .service-tags span {
+    border-color: rgba(88, 171, 212, 0.12);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.service-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-width: 150px;
+    margin-top: auto;
+    padding: 11px 18px;
+    border: 1px solid rgba(88, 171, 212, 0.28);
+    border-radius: 11px;
+    background:
+        linear-gradient(145deg,
+            rgba(88, 171, 212, 0.1),
+            rgba(88, 171, 212, 0.035));
+    color: #fff;
+    font-family: "Lexend", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    overflow: hidden;
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* No arrow icons */
+.service-button i {
+    display: none !important;
+}
+
+.service-button:hover {
+    background:
+        linear-gradient(145deg,
+            rgba(88, 171, 212, 0.18),
+            rgba(88, 171, 212, 0.07));
+    border-color: rgba(88, 171, 212, 0.48);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(88, 171, 212, 0.08);
+}
+
+
+/* =========================================================
+      FOOTER
+      ========================================================= */
+
+.moto-footer {
+    position: relative;
+    padding: 80px 0 25px;
+    background:
+        linear-gradient(180deg,
+            rgb(1, 18, 36),
+            rgb(2, 13, 27));
+    border-top: 1px solid rgba(88, 171, 212, 0.1);
+    overflow: hidden;
+}
+
+.moto-footer::before {
+    content: "";
+    position: absolute;
+    top: -150px;
+    left: 50%;
+    width: 500px;
+    height: 300px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle,
+            rgba(88, 171, 212, 0.08),
+            transparent 70%);
+    pointer-events: none;
+}
+
+.footer-container {
+    position: relative;
+    width: min(calc(100% - 50px), 1150px);
+    margin: 0 auto;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1.1fr;
+    gap: 55px;
+    padding-bottom: 55px;
+}
+
+.footer-brand {
+    max-width: 330px;
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: "Lexend", sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.footer-logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.footer-logo strong {
+    color: #58abd4;
+}
+
+.footer-brand p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.48);
+    font-family: "Lexend", sans-serif;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.footer-column {
+    min-width: 0;
+}
+
+.footer-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #58abd4;
+    font-family: "Lexend", sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.footer-column h4 {
+    margin: 0 0 18px;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.footer-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-column li {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-column li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: rgba(255, 255, 255, 0.48);
+    font-family: "Lexend", sans-serif;
+    font-size: 10.5px;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.footer-column li a i {
+    width: 14px;
+    color: rgba(88, 171, 212, 0.65);
+    font-size: 10px;
+    text-align: center;
+}
+
+.footer-column li a:hover {
+    color: #fff;
+    transform: translateX(4px);
+}
+
+.footer-column li a:hover i {
+    color: #58abd4;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "Lexend", sans-serif;
+    font-size: 10.5px;
+    line-height: 1.5;
+    transition: color 0.25s ease;
+}
+
+a.footer-contact-item:hover {
+    color: #fff;
+}
+
+.footer-contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(88, 171, 212, 0.14);
+    border-radius: 9px;
+    background: rgba(88, 171, 212, 0.07);
+    color: #58abd4;
+    font-size: 11px;
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.35);
+    font-family: "Lexend", sans-serif;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.footer-bottom span {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-built {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer-built i {
+    color: #58abd4;
+    font-size: 8px;
+}
+
+
+/* =========================================================
+      AOS SAFETY
+      ========================================================= */
+
+[data-aos] {
+    visibility: visible !important;
+}
+
+[data-aos].aos-animate {
+    visibility: visible !important;
+}
+
+#bike-services,
+.workflow-section,
+.moto-footer {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+}
+
+
+/* =========================================================
+      TABLET
+      ========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar-inner {
+        width: min(calc(100% - 30px), 1150px);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        max-height: calc(100vh - 105px);
+        padding: 8px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border: 1px solid rgba(88, 171, 212, 0.13);
+        border-radius: 17px;
+        background: rgba(2, 20, 38, 0.96);
+        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(22px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.35s ease;
+    }
+
+    .nav.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .nav>ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3px;
+    }
+
+    .nav>ul>li {
+        width: 100%;
+    }
+
+    .nav-link {
+        width: 100%;
+        justify-content: center;
+        min-height: 47px;
+    }
+
+    .nav-dropdown>.nav-dropdown-toggle {
+        justify-content: center;
+    }
+
+    .nav-dropdown-menu {
+        position: static;
+        width: 100%;
+        max-height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 13px;
+        background: rgba(88, 171, 212, 0.025);
+        box-shadow: none;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        overflow: hidden;
+        transform: none;
+        transition:
+            max-height 0.4s ease,
+            opacity 0.3s ease,
+            padding 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+    .nav-dropdown-menu::before {
+        display: none;
+    }
+
+    .nav-dropdown.open .nav-dropdown-menu {
+        max-height: 420px;
+        padding: 5px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .nav-dropdown-item {
+        justify-content: flex-start;
+        padding: 10px;
+    }
+
+    .bike-hero {
+        min-height: auto;
+        padding: 145px 0 75px;
+    }
+
+    .bike-stats {
+        gap: 10px;
+    }
+
+    .bike-stat {
+        min-width: 170px;
+    }
+
+    .workflow-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .workflow-grid {
+        gap: 16px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1.4fr 1fr 1fr;
+        gap: 40px;
+    }
+
+    .footer-brand {
+        grid-column: span 3;
+        max-width: 600px;
+    }
+}
+
+
+/* =========================================================
+      MOBILE
+      ========================================================= */
+
+@media (max-width: 700px) {
+
+    .navbar-main {
+        height: 70px;
+    }
+
+    .brand-logo {
+        width: 39px;
+        height: 39px;
+    }
+
+    .brand-name {
+        font-size: 16px;
+    }
+
+    .bike-hero {
+        padding: 130px 0 65px;
+    }
+
+    .bike-hero-container {
+        width: min(calc(100% - 30px), 1050px);
+    }
+
+    .bike-hero h1 {
+        font-size: 46px;
+        letter-spacing: -1.5px;
+    }
+
+    .bike-hero-container>p {
+        font-size: 12px;
+    }
+
+    .bike-stats {
+        flex-direction: column;
+    }
+
+    .bike-stat {
+        width: 100%;
+    }
+
+    .workflow-section {
+        padding: 90px 0;
+    }
+
+    .workflow-container {
+        width: min(calc(100% - 30px), 1050px);
+    }
+
+    .workflow-heading h2 {
+        font-size: 38px;
+    }
+
+    .workflow-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow-grid::before {
+        display: none;
+    }
+
+    .workflow-card {
+        min-height: 270px;
+    }
+
+    #bike-services {
+        padding-top: 90px;
+    }
+
+    .services-container {
+        width: min(calc(100% - 30px), 1150px);
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .service-image-wrapper {
+        aspect-ratio: 1 / 0.70;
+    }
+
+    .service-content {
+        padding: 22px;
+    }
+
+    .service-title-row {
+        gap: 14px;
+    }
+
+    .service-title-row h3 {
+        font-size: 26px;
+    }
+
+    .service-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 13px;
+        font-size: 15px;
+    }
+
+    .service-content>p {
+        font-size: 12px;
+        line-height: 1.75;
+    }
+
+    .service-category {
+        top: 14px;
+        left: 14px;
+    }
+
+    .service-button {
+        width: 100%;
+    }
+
+    .service-card:hover .service-image {
+        transform: scale(1.035);
+    }
+
+    .moto-footer {
+        padding: 65px 0 22px;
+    }
+
+    .footer-container {
+        width: min(calc(100% - 30px), 1150px);
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 38px;
+        padding-bottom: 40px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+        max-width: none;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+
+/* =========================================================
+      SMALL MOBILE
+      ========================================================= */
+
+@media (max-width: 600px) {
+
+    .navbar-inner {
+        width: min(calc(100% - 24px), 1150px);
+    }
+
+    .bike-hero h1 {
+        font-size: 40px;
+    }
+
+    .bike-label {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .workflow-heading h2 {
+        font-size: 34px;
+    }
+
+    .workflow-heading-badge {
+        width: fit-content;
+    }
+
+    .section-heading h2 {
+        font-size: 35px;
+    }
+
+    .services-heading {
+        margin-bottom: 48px;
+    }
+
+    .service-content {
+        padding: 20px;
+    }
+
+    .service-title-row h3 {
+        font-size: 24px;
+    }
+
+    .footer-bottom p {
+        font-size: 8.5px;
+    }
+}
+
+
+@media (max-width: 380px) {
+
+    .brand-name {
+        font-size: 15px;
+    }
+
+    .bike-hero h1 {
+        font-size: 36px;
+    }
+
+    .workflow-heading h2 {
+        font-size: 31px;
+    }
+
+    .services-container {
+        width: min(calc(100% - 24px), 1150px);
+    }
+
+    .service-content {
+        padding: 19px;
+    }
+
+    .service-title-row h3 {
+        font-size: 22px;
+    }
+
+    .service-number {
+        font-size: 8px;
+    }
+
+    .service-tags span {
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+      REDUCED MOTION
+      ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

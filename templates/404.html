@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>404 | Moto Genie</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Navbar-->
+    <link rel="stylesheet" href="/static/css/navbar.css">
+
+    <!-- Preloader-->
+    <link rel="stylesheet" href="/static/css/preloader.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 30px;
+
+            background:
+                radial-gradient(circle at 50% 20%,
+                    rgba(88, 171, 212, 0.12),
+                    transparent 35%),
+                #011224;
+
+            color: #ffffff;
+
+            font-family: "Lexend", sans-serif;
+
+            overflow: hidden;
+        }
+
+
+        .error-page {
+
+            width: 100%;
+
+            max-width: 700px;
+
+            text-align: center;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .error-image {
+
+            width: 150px;
+
+            height: 150px;
+
+            object-fit: contain;
+
+            margin-bottom: 20px;
+
+            animation:
+                floatImage 3s ease-in-out infinite;
+        }
+
+
+        .error-code {
+
+            font-size: clamp(80px, 15vw, 150px);
+
+            line-height: 0.9;
+
+            font-weight: 700;
+
+            letter-spacing: -8px;
+
+            color: #58abd4;
+
+            text-shadow:
+                0 0 25px rgba(88, 171, 212, 0.25);
+
+            margin-bottom: 20px;
+        }
+
+
+        .error-title {
+
+            font-size: clamp(24px, 4vw, 38px);
+
+            font-weight: 600;
+
+            margin-bottom: 15px;
+        }
+
+
+        .error-title span {
+
+            color: #58abd4;
+        }
+
+
+        .error-description {
+
+            max-width: 520px;
+
+            margin: 0 auto 30px;
+
+            color: rgba(255, 255, 255, 0.62);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        .error-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 14px 24px;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+
+            color: #ffffff;
+
+            background: rgba(88, 171, 212, 0.12);
+
+            border: 1px solid rgba(88, 171, 212, 0.35);
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .error-button:hover {
+
+            color: #ffffff;
+
+            transform: translateY(-3px);
+
+            background: rgba(88, 171, 212, 0.2);
+
+            border-color: #58abd4;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.25),
+                0 0 20px rgba(88, 171, 212, 0.12);
+        }
+
+
+        .error-button-icon {
+
+            font-size: 18px;
+        }
+
+
+        .background-glow {
+
+            position: fixed;
+
+            width: 350px;
+
+            height: 350px;
+
+            border-radius: 50%;
+
+            filter: blur(100px);
+
+            pointer-events: none;
+
+            opacity: 0.12;
+        }
+
+
+        .glow-one {
+
+            top: -150px;
+
+            left: -100px;
+
+            background: #58abd4;
+        }
+
+
+        .glow-two {
+
+            right: -120px;
+
+            bottom: -160px;
+
+            background: #58abd4;
+        }
+
+
+        @keyframes floatImage {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-10px);
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            body {
+
+                padding: 20px;
+
+            }
+
+            .error-image {
+
+                width: 120px;
+
+                height: 120px;
+
+            }
+
+            .error-code {
+
+                letter-spacing: -5px;
+
+            }
+
+            .error-description {
+
+                font-size: 14px;
+
+            }
+
+            .error-button {
+
+                width: 100%;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="background-glow glow-one"></div>
+
+    <div class="background-glow glow-two"></div>
+
+
+    <main class="error-page">
+
+        <img src="{{ url_for('static', filename='images/genie-read.png') }}" alt="Moto Genie" class="error-image">
+
+
+        <div class="error-code">
+            404
+        </div>
+
+
+        <h1 class="error-title">
+
+            This page
+            <span>took a wrong turn.</span>
+
+        </h1>
+
+
+        <p class="error-description">
+
+            The page you're looking for doesn't exist,
+            may have been moved, or the URL might be incorrect.
+
+            Let's get you back to Moto Genie.
+
+        </p>
+
+
+        <a href="{{ url_for('home') }}" class="error-button">
+
+            <span class="error-button-icon">
+                ←
+            </span>
+
+            Back to Home
+
+        </a>
+
+    </main>
+
+    <!-- Project JavaScript -->
+    <script src="/static/js/script.js"></script>
+
+    <script src="/static/js/preloader.js"></script>
+
+    <script src="/static/js/navbar.js"></script>
+
+
+</body>
+
+</html>
